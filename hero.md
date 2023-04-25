@@ -48,14 +48,15 @@ https://drive.google.com/drive/folders/1CKqOQzst1cGURXGiRVivi2Xsc0n-X8CR?usp=sha
 * set. Sets. Unordered collection of unique objects {'10', 'b'}
 * bool. Booleans. True or False
 
-One illusion may beget another. For example, since 0.1 is not exactly 1/10, summing three values of 0.1 may not yield exactly 0.3, either:
-.1 + .1 + .1 == .3
-False           
+One illusion may beget another. For example, since 0.1 is not exactly 1/10, summing three values of 0.1 may not yield exactly 0.3, either:          
+`.1 + .1 + .1 == .3
+False`
 
-Since the 0.1 cannot get any closer to the exact value of 1/10 and 0.3 cannot get any closer to the exact value of 3/10, then pre-rounding with round() function cannot help:
-round(.1, 1) + round(.1, 1) + round(.1, 1) == round(.3, 1)
-False           
+Since the 0.1 cannot get any closer to the exact value of 1/10 and 0.3 cannot get any closer to the exact value of 3/10, then pre-rounding with round() function cannot help:             
+`round(.1, 1) + round(.1, 1) + round(.1, 1) == round(.3, 1)
+False`           
 
-Though the numbers cannot be made closer to their intended exact values, the round() function can be useful for post-rounding so that results with inexact values become comparable to one another:
-round(.1 + .1 + .1, 10) == round(.3, 10)
-True
+Though the numbers cannot be made closer to their intended exact values, the round() function can be useful for post-rounding so that results with inexact values become comparable to one another:           
+`round(.1 + .1 + .1, 10) == round(.3, 10)
+True`
+
