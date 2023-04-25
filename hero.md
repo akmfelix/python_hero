@@ -37,3 +37,13 @@ https://drive.google.com/drive/folders/1CKqOQzst1cGURXGiRVivi2Xsc0n-X8CR?usp=sha
 * create a branch
 * open a pull request
 * some test
+
+### Data structures
+* int. Integers
+* float. Floating points
+* str. Strings
+* list. Lists ordered sequence of objects ['10', 'hello', '10.5']
+* dict. Dictionaries. Unordered key:value pairs {'mykey':'value'}
+* tup. Tuples. Ordered immutable sequence of objects ('10', 'hello', '10.5')
+* set. Sets. Unordered collection of unique objects {'10', 'b'}
+* bool. Booleans. True or False
