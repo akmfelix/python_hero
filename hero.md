@@ -22,6 +22,7 @@ https://drive.google.com/drive/folders/1CKqOQzst1cGURXGiRVivi2Xsc0n-X8CR?usp=sha
 Writing default config to: C:\Users\00031730\.jupyter\jupyter_server_config.py
 c.NotebookApp.browser = 'C:/Program Files/Google/Chrome/Application/chrome.exe %s'
 * jupyter notebook
+* pwd working directory
 
 
 ### CMD prompts in Windows
@@ -88,3 +89,47 @@ Though the numbers cannot be made closer to their intended exact values, the rou
 * float formatting; {value:width.precision f}; print('the result was {r:1.2f}'.format(r=reuslt))
 * f format string; name='Jose' print(f'Hello, his name is {name}')
 
+## Lists
+* Lists are constructed with brackets [] and commas separating every element in the list.
+* Lists can actually hold different object types
+* Indexing and Slicing
+* We can also use + to concatenate lists, just like we did for strings. Note: This doesn't actually change the original list.
+* We can also use the * for a duplication method similar to strings
+* Use the append method to permanently add an item to the end of a list
+* Use pop to "pop off" an item from the list. By default pop takes off the last index, but you can also specify which index to pop off
+* We can use the sort method and the reverse methods to also effect your lists
+* Nesting Lists
+* List Comprehensions; first_col = [row[0] for row in matrix] [1, 4, 7]
+
+## Dictionaries
+* Mappings are a collection of objects that are stored by a key, unlike a sequence that stored objects by their relative position. This is an important distinction, since mappings won't retain order since they have objects defined by a key. A Python dictionary consists of a key and then an associated value. That value can be almost any Python object.
+* Call values by their key my_dict['key2']
+* my_dict['key1'] = my_dict['key1'] - 123
+* d = {} d['animal'] = 'Dog' d['answer'] = 42
+* d = {'key1':{'nestkey':{'subnestkey':'value'}}} d['key1']['nestkey']['subnestkey']
+* d.keys() Method to return a list of all keys 
+* d.values() Method to grab all values
+* d.items() Method to return tuples of all items
+
+## Tuples
+* In Python tuples are very similar to lists, however, unlike lists they are immutable meaning they can not be changed. You would use tuples to present things that shouldn't be changed, such as days of the week, or dates on a calendar.
+* t.index('one') .index to enter a value and return the index
+* t.count('one') .count to count the number of times a value appears
+
+## Sets
+* Sets are an unordered collection of unique elements. We can construct them by using the set() function
+* x.add(1) We add to sets with the add() method
+* Note the curly brackets. This does not indicate a dictionary! Although you can draw analogies as a set being a dictionary with only keys
+* list1 = [1,1,2,2,3,4,5,6,1,1] set(list1) Cast as set to get unique values
+
+## I/O with Basic files in python
+* myfile = open('test.txt')
+* myfile.seek(0)
+* myfile.read()
+* myfile.readlines()
+* myfile.close()
+~~~
+with open('test.txt') as my_variable_name:
+  contents = my_variable_name.read()
+contents  
+~~~
