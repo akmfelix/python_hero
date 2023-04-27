@@ -123,11 +123,17 @@ Though the numbers cannot be made closer to their intended exact values, the rou
 * list1 = [1,1,2,2,3,4,5,6,1,1] set(list1) Cast as set to get unique values
 
 ## I/O with Basic files in python FILES
+* %%writefile test_file.txt can create files in jupyter notebook
 * myfile = open('test.txt')
 * myfile.seek(0)
 * myfile.read()
 * myfile.readlines()
 * myfile.close()
+* mode='r' is read only
+* mode='w' is write only (will overwrite files or create new)
+* mode='a' is append only (will add onto files)
+* mode='r+' is reading and writing
+* mode='w+' is writing and reading (will overwrite files or create new)
 ~~~
 with open('test.txt') as my_variable_name:
   contents = my_variable_name.read()
@@ -139,8 +145,23 @@ contents
 Hello, this is a quick test file.
 my_file = open('test.txt')
 
+with open('test_file.txt', mode='r') as f:
+  print(f.read())
+  
+with open('test_file.txt', mode='a') as f:
+    f.write('\nfour on fourth')
+~~~
 
-with open('test.txt', mode='r') as my_variable_name:
-  contents = my_variable_name.read()
-contents  
+~~~
+with open('abc', mode='w') as f:
+  f.write('I earn $4000 every month')
+  
+with open('abc', mode='r') as f:
+  print(f.read())
+~~~
+
+~~~
+x = open('myfile.txt', 'w')
+x.write('This is my file')
+x.close()
 ~~~
