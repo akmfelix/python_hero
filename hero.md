@@ -122,7 +122,7 @@ Though the numbers cannot be made closer to their intended exact values, the rou
 * Note the curly brackets. This does not indicate a dictionary! Although you can draw analogies as a set being a dictionary with only keys
 * list1 = [1,1,2,2,3,4,5,6,1,1] set(list1) Cast as set to get unique values
 
-## I/O with Basic files in python
+## I/O with Basic files in python FILES
 * myfile = open('test.txt')
 * myfile.seek(0)
 * myfile.read()
@@ -130,6 +130,17 @@ Though the numbers cannot be made closer to their intended exact values, the rou
 * myfile.close()
 ~~~
 with open('test.txt') as my_variable_name:
+  contents = my_variable_name.read()
+contents  
+~~~
+
+~~~
+%%writefile test.txt
+Hello, this is a quick test file.
+my_file = open('test.txt')
+
+
+with open('test.txt', mode='r') as my_variable_name:
   contents = my_variable_name.read()
 contents  
 ~~~
