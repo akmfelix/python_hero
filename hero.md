@@ -60,3 +60,16 @@ Though the numbers cannot be made closer to their intended exact values, the rou
 `round(.1 + .1 + .1, 10) == round(.3, 10)`
 `True`
 
+# Python
+* Dynamic typing. Can change variable data type.
+
+## String
+* index. string[5]
+* slice. string[start:stop:step]. string[::-1] reverse
+* immutable. name='Almas' name[0]='R' - not correct
+* concatenation. last_letter= name[-1] name+last_letter -> Almass; letter='z' letter*3 -> zzz
+* methods. x.upper(); x.lower(); x.split() x.split('i')
+* .format(); 'String here {} then also {}'.format('smth1 or var','smth2'); print('The {2} {1} {0}'.format('fox','brown','quick')); print('The {q} {b} {f}'.format(f='fox',b='brown',q='quick')); x='The {1} {2} {0}'.format(f,q,b)
+* float formatting; {value:width.precision f}; print('the result was {r:1.2f}'.format(r=reuslt))
+* f format string; name='Jose' print(f'Hello, his name is {name}')
+
