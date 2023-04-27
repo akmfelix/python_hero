@@ -16,6 +16,13 @@ https://support.udemy.com/hc/en-us/articles/229603868-Certificate-of-Completion
 ##### Course Slides can be found here:
 https://drive.google.com/drive/folders/1CKqOQzst1cGURXGiRVivi2Xsc0n-X8CR?usp=sharing
 
+
+## Jupyter
+(base) PS C:\Users\00031730> jupyter server --generate-config
+Writing default config to: C:\Users\00031730\.jupyter\jupyter_server_config.py
+c.NotebookApp.browser = 'C:/Program Files/Google/Chrome/Application/chrome.exe %s'
+
+
 ### CMD prompts in Windows
 * cd: show current directory
 * dir:  contents of my directory
@@ -69,8 +76,10 @@ Though the numbers cannot be made closer to their intended exact values, the rou
 `True`
 
 ## String
+* Strings in Python are actually a sequence, which basically means Python keeps track of every element in the string as a sequence.
 * index. string[5]
 * slice. string[start:stop:step]. string[::-1] reverse
+* len() function
 * immutable. name='Almas' name[0]='R' - not correct
 * concatenation. last_letter= name[-1] name+last_letter -> Almass; letter='z' letter*3 -> zzz
 * methods. x.upper(); x.lower(); x.split() x.split('i')
