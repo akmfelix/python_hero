@@ -38,6 +38,10 @@ https://drive.google.com/drive/folders/1CKqOQzst1cGURXGiRVivi2Xsc0n-X8CR?usp=sha
 * open a pull request
 * some test
 
+# Python
+* Python uses dynamic typing, meaning you can reassign variables to different data types. This makes Python very flexible in assigning data types; it differs from other languages that are statically typed.
+* Variable assignment follows name = object, where a single equals sign = is an assignment operator
+
 ## Data structures
 * int. Integers
 * float. Floating points
@@ -47,6 +51,10 @@ https://drive.google.com/drive/folders/1CKqOQzst1cGURXGiRVivi2Xsc0n-X8CR?usp=sha
 * tup. Tuples. Ordered immutable sequence of objects ('10', 'hello', '10.5')
 * set. Sets. Unordered collection of unique objects {'10', 'b'}
 * bool. Booleans. True or False
+
+## Numbers
+* //; floor division. The // operator (two forward slashes) truncates the decimal without rounding, and returns an integer result.
+* %; The % operator returns the remainder after division.
 
 One illusion may beget another. For example, since 0.1 is not exactly 1/10, summing three values of 0.1 may not yield exactly 0.3, either:          
 `.1 + .1 + .1 == .3`     
@@ -59,9 +67,6 @@ Since the 0.1 cannot get any closer to the exact value of 1/10 and 0.3 cannot ge
 Though the numbers cannot be made closer to their intended exact values, the round() function can be useful for post-rounding so that results with inexact values become comparable to one another:           
 `round(.1 + .1 + .1, 10) == round(.3, 10)`
 `True`
-
-# Python
-* Dynamic typing. Can change variable data type.
 
 ## String
 * index. string[5]
