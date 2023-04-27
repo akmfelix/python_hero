@@ -18,9 +18,10 @@ https://drive.google.com/drive/folders/1CKqOQzst1cGURXGiRVivi2Xsc0n-X8CR?usp=sha
 
 
 ## Jupyter
-(base) PS C:\Users\00031730> jupyter server --generate-config
+* (base) PS C:\Users\00031730> jupyter server --generate-config
 Writing default config to: C:\Users\00031730\.jupyter\jupyter_server_config.py
 c.NotebookApp.browser = 'C:/Program Files/Google/Chrome/Application/chrome.exe %s'
+* jupyter notebook
 
 
 ### CMD prompts in Windows
