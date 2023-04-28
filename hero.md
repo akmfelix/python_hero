@@ -177,4 +177,17 @@ else:
   some_code
 ~~~
 
+## for loops
+* Many objects in Python are iterable, meaning we can iterate over every element in the object
+
+~~~
+my_iterable=[1,2,3]
+for item_name in my_iterable:
+  print(item_name)
+  
+mylist = [(1,2),(3,4),(5,6)]  
+~~~
+
+
+
 
