@@ -185,7 +185,16 @@ my_iterable=[1,2,3]
 for item_name in my_iterable:
   print(item_name)
   
+# tuple unpacking
+# duplicate structure of items
 mylist = [(1,2),(3,4),(5,6)]  
+for (a,b) in mylist:
+  print(a)
+  print(b)
+  
+for a,b in mylist:
+  print(a)
+  print(b)  
 ~~~
 
 
