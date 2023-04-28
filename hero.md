@@ -165,3 +165,16 @@ x = open('myfile.txt', 'w')
 x.write('This is my file')
 x.close()
 ~~~
+
+
+## if elif else
+~~~
+if some_cond:
+  some_code
+elif some_cond:
+  some_code
+else:
+  some_code
+~~~
+
+
