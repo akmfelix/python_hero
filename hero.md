@@ -88,6 +88,13 @@ Though the numbers cannot be made closer to their intended exact values, the rou
 * .format(); 'String here {} then also {}'.format('smth1 or var','smth2'); print('The {2} {1} {0}'.format('fox','brown','quick')); print('The {q} {b} {f}'.format(f='fox',b='brown',q='quick')); x='The {1} {2} {0}'.format(f,q,b)
 * float formatting; {value:width.precision f}; print('the result was {r:1.2f}'.format(r=reuslt))
 * f format string; name='Jose' print(f'Hello, his name is {name}')
+~~~
+print('The {q} {b} {f}'.format(f='fox',b='brown',q='quick'))
+
+# f format string
+name='Almas' 
+print(f'Hello, Mr.{name}')
+~~~
 
 ## Lists
 * Lists are constructed with brackets [] and commas separating every element in the list.
@@ -103,13 +110,25 @@ Though the numbers cannot be made closer to their intended exact values, the rou
 
 ## Dictionaries
 * Mappings are a collection of objects that are stored by a key, unlike a sequence that stored objects by their relative position. This is an important distinction, since mappings won't retain order since they have objects defined by a key. A Python dictionary consists of a key and then an associated value. That value can be almost any Python object.
-* Call values by their key my_dict['key2']
-* my_dict['key1'] = my_dict['key1'] - 123
-* d = {} d['animal'] = 'Dog' d['answer'] = 42
-* d = {'key1':{'nestkey':{'subnestkey':'value'}}} d['key1']['nestkey']['subnestkey']
-* d.keys() Method to return a list of all keys 
-* d.values() Method to grab all values
-* d.items() Method to return tuples of all items
+~~~
+mydict = {'k1':1,'k2':2,'k3':3}
+mydict['key2']  # call values by their key
+my_dict['key1'] = my_dict['key1'] - 123
+
+# nested dict
+d = {'key1':{'nestkey':{'subnestkey':'value'}}}
+d['key1']['nestkey']['subnestkey']
+
+# add key, values to dict
+d = {} 
+d['animal'] = 'Dog' 
+d['answer'] = 42
+
+# dict methods
+d.keys()
+d.values()
+d.items()
+~~~
 
 ## Tuples
 * In Python tuples are very similar to lists, however, unlike lists they are immutable meaning they can not be changed. You would use tuples to present things that shouldn't be changed, such as days of the week, or dates on a calendar.
@@ -120,15 +139,22 @@ Though the numbers cannot be made closer to their intended exact values, the rou
 * Sets are an unordered collection of unique elements. We can construct them by using the set() function
 * x.add(1) We add to sets with the add() method
 * Note the curly brackets. This does not indicate a dictionary! Although you can draw analogies as a set being a dictionary with only keys
-* list1 = [1,1,2,2,3,4,5,6,1,1] set(list1) Cast as set to get unique values
+~~~
+list1 = [1,1,2,2,3,4,5,6,1,1]
+set(list1)
+~~~
+
 
 ## I/O with Basic files in python FILES
 * %%writefile test_file.txt can create files in jupyter notebook
-* myfile = open('test.txt')
-* myfile.seek(0)
-* myfile.read()
-* myfile.readlines()
-* myfile.close()
+~~~
+myfile = open('test.txt')
+myfile.seek(0)
+myfile.read()
+myfile.readlines()
+myfile.close()
+~~~
+
 * mode='r' is read only
 * mode='w' is write only (will overwrite files or create new)
 * mode='a' is append only (will add onto files)
@@ -195,6 +221,10 @@ for (a,b) in mylist:
 for a,b in mylist:
   print(a)
   print(b)  
+  
+d = {'k1':1,'k2':2,'k3':3}
+for key,value in d.items():
+  print(key, value)
 ~~~
 
 
