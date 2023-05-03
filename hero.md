@@ -266,7 +266,7 @@ list(range(0,11,2))
 ~~~
 
 #### enumarate
-
+* can take any iterable object
 ~~~
 counter=0
 for letter in 'abcde':
@@ -283,6 +283,42 @@ for item in enumarate(word):
   print(item)
 (0,'a')  
 (1,'b')
+~~~
 
+#### zip function
+* zips together two function
+* will zip only the shortest list
+~~~
+mylist1 = [1,2,3]
+mylist2 = ['a','b','c']
+for item in zip(mylist1,mylist2):
+  print(item)
+  
+list(zip(mylist1,mylist2))
+~~~  
+# (1,'a')  
+# (2,'b')
+# (3,'c')
 
+#### in, max, min, random
+~~~
+x in [1,3,'a','b','x']
+'mykey' in {'mykey':1}
+
+max(mylist)
+min(mylist)
+
+from random import shuffle
+mylist=[1,2,3,4,5,6,7,8,9,10]
+shuffle(mylist)
+
+# random integer
+from random import randint
+randint(0,100)
+~~~
+
+#### input
+~~~
+result = input('what is your age?')
+int(result)
 ~~~
