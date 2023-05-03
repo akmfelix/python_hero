@@ -240,6 +240,13 @@ while x<5:
   print(x)
   x+=1
 
+x=0
+while x<10:
+    print('x is equal to: {}'.format(x))
+    x+=1
+    if x==4:
+        continue
+
 x=[1,2,3]
 for item in x:
   pass
@@ -265,21 +272,31 @@ for num in range(0,11,2):
 list(range(0,11,2))  
 ~~~
 
-#### enumarate
+#### enumerate
 * can take any iterable object
 ~~~
 counter=0
 for letter in 'abcde':
-  print('At index count {}, the letter is {}'.format(counter,letter))
-  counter += 1
+    print(f'at index position {counter} the letter is {letter}')
+    counter+=1
+at index position 0 the letter is a
+at index position 1 the letter is b
+at index position 2 the letter is c
+at index position 3 the letter is d
+at index position 4 the letter is e    
 
 counter=0
 word='abcde'
 for letter in word:
   print(word[counter])
   counter += 1
+a
+b
+c
+d
+e  
   
-for item in enumarate(word):
+for item in enumerate(word):
   print(item)
 (0,'a')  
 (1,'b')
@@ -305,6 +322,7 @@ list(zip(mylist1,mylist2))
 x in [1,3,'a','b','x']
 'mykey' in {'mykey':1}
 
+# Quickly check the minimum or maximum of a list with these functions
 max(mylist)
 min(mylist)
 
