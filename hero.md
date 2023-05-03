@@ -232,3 +232,28 @@ for key,value in d.items():
 * continue: goes to the top of the closest enclosing loop
 * pass: does nothing at all
 
+~~~
+x=0
+while x<5:
+  if x==2:
+    break
+  print(x)
+  x+=1
+
+x=[1,2,3]
+for item in x:
+  pass
+
+mystring='Almas'
+for letter in mystring:
+  if letter == 'a':
+    continue
+  print(letter)
+  
+for letter in mystring:
+  if letter == 'a':
+    break
+  print(letter)  
+~~~
+
+
