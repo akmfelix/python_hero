@@ -256,4 +256,33 @@ for letter in mystring:
   print(letter)  
 ~~~
 
+## useful operators
 
+~~~
+for num in range(0,11,2):
+  print(num)
+  
+list(range(0,11,2))  
+~~~
+
+#### enumarate
+
+~~~
+counter=0
+for letter in 'abcde':
+  print('At index count {}, the letter is {}'.format(counter,letter))
+  counter += 1
+
+counter=0
+word='abcde'
+for letter in word:
+  print(word[counter])
+  counter += 1
+  
+for item in enumarate(word):
+  print(item)
+(0,'a')  
+(1,'b')
+
+
+~~~
