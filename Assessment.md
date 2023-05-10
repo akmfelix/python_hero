@@ -42,3 +42,8 @@ for num in range(1,101):
     print(num)
 ~~~
 
+### Use List Comprehension to create a list of the first letters of every word in the string below
+~~~
+st = 'Create a list of the first letters of every word in this string'
+result = [letter[0] for letter in st.split()]
+~~~
