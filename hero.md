@@ -384,5 +384,18 @@ mylist = [x*y for x in ['a','b','c'] for y in [1,2,3]]
 ['a', 'aa', 'aaa', 'b', 'bb', 'bbb', 'c', 'cc', 'ccc']
 ~~~
 
+#### Methods
+* python documentation
+~~~
+# help function, description of method
+help(mylist.insert)
+~~~
 
-
+## Functions
+* Creating clean repeatable code is a key part of becoming an effective programmer
+* Functions allow us to create blocks of code that can be easily executed many times, without needing constantly rewrite the entire block od code
+~~~
+def name_of_function(name):
+  print(Hello + ' ' +'Mr.'name)
+name_of_function('Almas')  
+~~~
