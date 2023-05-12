@@ -398,4 +398,31 @@ help(mylist.insert)
 def name_of_function(name):
   print(Hello + ' ' +'Mr.'name)
 name_of_function('Almas')  
+
+# if name is not provided use default value
+def say_hello(name='Default'):
+  print(f'Hello {name}')
+
+# return
+def add_num(a,b):
+  return a+b
+result = add_num(10,20)  
+
+def check_even_list(num_list):
+    for num in num_list:
+        if num%2==0:
+            return True
+        else:
+            pass
+    return False
+    
+# return only even numbers
+def check_even_numbers(num_list):
+    even_numbers=[]
+    for num in num_list:
+        if num%2==0:
+            even_numbers.append(num)
+        else:
+            pass
+    return even_numbers
 ~~~
