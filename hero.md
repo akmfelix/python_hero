@@ -461,4 +461,8 @@ def check_guess(mylist, user_guess):
     else:
         print('wrong')
     print(mylist)
+
+mixedup_list = shuffle_list(mylist)
+guess = player_guess()
+check_guess(mixedup_list, guess)
 ~~~
