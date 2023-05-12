@@ -426,3 +426,17 @@ def check_even_numbers(num_list):
             pass
     return even_numbers
 ~~~
+
+### tuple unpacking in functions
+~~~
+car_prices = [('Hyundai',19500),('Kia',18000),('Pajero',25000)]
+def car_decision(car_prices):
+    car_maxprice = 0
+    car_name = ''
+    for cur_car_name, cur_car_price in car_prices:
+        if car_maxprice < cur_car_price:
+            car_maxprice = cur_car_price
+            car_name = cur_car_name
+    return(car_name, car_maxprice)
+~~~
+
