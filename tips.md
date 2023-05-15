@@ -85,3 +85,24 @@ def check_guess(mylist):
 mixedlist = shuffle_list(mylist)
 check_guess(mixedlist)
 ~~~
+
+## Anthropomorphism
+~~~
+def myfunc(mystring):
+    modstring=''
+    for index in range(len(mystring)):
+        if index%2==0:
+            modstring += mystring[index].lower()
+        else:
+            modstring += mystring[index].upper()
+    return modstring
+    
+def myfunc(mystring):
+    string = ''
+    for index, letter in enumerate(mystring):
+        if index%2==0:
+            string += letter.lower()
+        else:
+            string += letter.upper()
+    return string  
+~~~
