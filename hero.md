@@ -537,3 +537,13 @@ myfunc(10,20,30,40,fruit='apple', lady='sex', food='sushi')
 {'fruit': 'apple', 'lady': 'sex', 'food': 'sushi'}
 I would like 10 sushi
 ~~~
+
+~~~
+def myfunc(*args):
+    even_nums=[]
+    for num in args:
+        if num%2==0:
+            even_nums.append(num)
+    return even_nums
+~~~
+
