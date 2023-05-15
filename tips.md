@@ -60,3 +60,28 @@ while True:
     except ValueError:
         print('Enter a valid number')
 ~~~
+
+## Cups shuffle game
+~~~
+from random import shuffle
+mylist = ['','O','']
+def shuffle_list(mylist):
+    shuffle(mylist)
+    return mylist
+def player_guess():
+    user_guess=''
+    while user_guess not in ['0','1','2']:
+        user_guess = input('Choose 0, 1 or 2: ')
+    return int(user_guess)
+def check_guess(mylist):
+    while True:
+        guess = player_guess()
+        if mylist[guess] == 'O':
+            print('correct')
+            break
+        else:
+            print('wrong')
+    print(mylist)
+mixedlist = shuffle_list(mylist)
+check_guess(mixedlist)
+~~~
