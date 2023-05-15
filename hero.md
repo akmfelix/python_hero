@@ -499,6 +499,41 @@ check_guess(mixedlist)
 # ARGS and KWARGS
 ~~~
 *args - arguments
-**kwargs - keyword arguments
+*kwargs - keyword arguments
+~~~
+* args
+* by default python will take all the parameters that are passed in and set them to be inside a tuple.
+* returns back tuple
+~~~
+def myfunc(a,b,c=0,d=0,e=0):
+    return sum((a,b)) * 0.05
+
+def myfunc(*args):
+    return sum(args) * 0.05
+    
+def myfunc(*args):
+    return print(args)
+# myfunc(1,2,3,4,5)    
+# (1, 2, 3, 4, 5)
 ~~~
 
+* kwargs
+* builds a dictionary of key value pairs
+~~~
+def myfunc(**kwargs):
+    if 'fruits' in kwargs:
+        print(f'My fruit of choice is {kwargs["fruits"]}')
+    else:
+        print(f'I did not find any fruit here. I found {kwargs["chocolate"]}')
+~~~
+
+~~~
+def myfunc(*args, **kwargs):
+    print(args)
+    print(kwargs)
+    print(f'I would like {args[0]} {kwargs["food"]}')
+myfunc(10,20,30,40,fruit='apple', lady='sex', food='sushi')
+(10, 20, 30, 40)
+{'fruit': 'apple', 'lady': 'sex', 'food': 'sushi'}
+I would like 10 sushi
+~~~
