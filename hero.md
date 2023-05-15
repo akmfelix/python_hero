@@ -467,6 +467,7 @@ guess = player_guess()
 check_guess(mixedup_list, guess)
 ~~~
 
+#### shuffle game
 ~~~
 from random import shuffle
 
@@ -494,3 +495,10 @@ def check_guess(mylist):
 mixedlist = shuffle_list(mylist)
 check_guess(mixedlist)
 ~~~
+
+# ARGS and KWARGS
+~~~
+*args - arguments
+**kwargs - keyword arguments
+~~~
+
