@@ -106,3 +106,47 @@ def myfunc(mystring):
             string += letter.upper()
     return string  
 ~~~
+
+## Lesser of two evens
+LESSER OF TWO EVENS: Write a function that returns the lesser of two given numbers if both numbers are even, but returns the greater if one or both numbers are odd
+~~~
+def lesser_of_two_evens(a,b):
+    if a%2==0 and b%2==0:
+        if a<b:
+            return a
+        elif a>b:
+            return b
+    else:
+        if a<b:
+            return b
+        elif a>b:
+            return a
+~~~
+
+## Animal crackers
+ANIMAL CRACKERS: Write a function takes a two-word string and returns True if both words begin with same letter
+~~~
+def animal_crackers(text):
+    mylist=text.split()
+    if len(mylist)>1:
+        if mylist[0][0]==mylist[1][0]:
+            return True
+        else:
+            return False
+    else:
+        return print('list is out of range')
+~~~
+
+## Makes twenty
+MAKES TWENTY: Given two integers, return True if the sum of the integers is 20 or if one of the integers is 20. If not, return False
+~~~
+def makes_twenty(n1,n2):
+    if sum((n1,n2))==20:
+        return True
+    elif n1==20 and n2==20:
+        return False
+    elif n1==20 or n2==20:
+        return True
+    else:
+        return False
+~~~
