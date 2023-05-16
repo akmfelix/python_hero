@@ -150,3 +150,60 @@ def makes_twenty(n1,n2):
     else:
         return False
 ~~~
+
+## Old MacDonald
+OLD MACDONALD: Write a function that capitalizes the first and fourth letters of a name
+~~~
+def old_macdonald(name):
+    newstring=''
+    for index, letter in enumerate(name):
+        if index==0 or index==3:
+            newstring += letter.capitalize()
+        else:
+            newstring += letter
+    return newstring
+~~~
+
+## Master Yoda
+MASTER YODA: Given a sentence, return a sentence with the words reversed
+~~~
+def master_yoda(text):
+    text_list = text.split()
+    return ' '.join(text_list[::-1])
+    
+def master_yoda(text):
+    return ' '.join(text.split()[::-1])
+    
+def master_yoda(text):
+    mylist=[]
+    for item in text.split():
+        mylist = [item] + mylist
+    return ' '.join(mylist)    
+~~~    
+
+## Almost there
+ALMOST THERE: Given an integer n, return True if n is within 10 of either 100 or 200
+~~~
+def almost_there(n):
+    if abs(100-n)<=10 or abs(200-n)<=10:
+        return True
+    else:
+        return False
+~~~
+
+## Find 33
+Given a list of ints, return True if the array contains a 3 next to a 3 somewhere.
+~~~
+def has33(nums):
+    for i in range(0,len(nums)-1):
+        if nums[i]==3 and nums[i+1]==3:
+            return True
+    return False
+    
+def has33(nums):
+    for i in range(0,len(nums)-1):
+        if nums[i:i+2] == [3,3]:
+            return True
+    return False
+~~~
+
