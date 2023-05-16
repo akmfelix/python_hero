@@ -107,6 +107,7 @@ print(f'Hello, Mr.{name}')
 * We can use the sort method and the reverse methods to also effect your lists
 * Nesting Lists
 * List Comprehensions; first_col = [row[0] for row in matrix] [1, 4, 7]
+* .split()
 
 ## Dictionaries
 * Mappings are a collection of objects that are stored by a key, unlike a sequence that stored objects by their relative position. This is an important distinction, since mappings won't retain order since they have objects defined by a key. A Python dictionary consists of a key and then an associated value. That value can be almost any Python object.
