@@ -195,6 +195,7 @@ x.close()
 
 
 ## if elif else
+* Python’s not operator allows you to invert the truth value of Boolean expressions and objects.
 ~~~
 if some_cond:
   some_code
