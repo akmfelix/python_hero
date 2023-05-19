@@ -1,3 +1,4 @@
+https://realpython.com/python-not-operator/
 ##### How do I know what directory my Notebooks are being saved?
 To find out where your notebooks are type: pwd in a cell and run it with Shift+Enter. This will print your working directory.
 
