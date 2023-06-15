@@ -9,6 +9,26 @@ GOOG 200
 MSFT 300
 ~~~
 
+## Work Hours
+~~~
+work_hours_list = [('A',500),('B',550),('C',450),('D',700),('E',100)]
+def check(work_hours):
+    
+    current_max = 0
+    employee_name = ''
+    
+    for name, hours in work_hours:
+        if hours > current_max:
+            current_max = hours
+            employee_name = name
+        else:
+            pass
+    
+    return (employee_name, current_max)
+
+name, hours = check(work_hours_list)
+~~~
+
 ## Take integer user input in Python
 ~~~
 try:
