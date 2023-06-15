@@ -1,8 +1,8 @@
 ## Tuple unpacking
 ~~~
 stock_prices = [('APPL',100),('GOOG',200),('MSFT',300)]
-for name, price in stock_prices:
-    print(name, price)
+for ticker, price in stock_prices:
+    print(ticker, price)
 APPL 100
 GOOG 200
 MSFT 300
