@@ -1,5 +1,6 @@
 ## Tuple unpacking
 ~~~
+# list of tuples
 stock_prices = [('APPL',100),('GOOG',200),('MSFT',300)]
 for ticker, price in stock_prices:
     print(ticker, price)
