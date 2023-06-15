@@ -117,6 +117,31 @@ mixedlist = shuffle_list(mylist)
 check_guess(mixedlist)
 ~~~
 
+~~~
+from random import shuffle
+mylist=[' ', 'O', ' ']
+def shuffle_list(mylist):
+    shuffle(mylist)
+    return mylist
+
+def player_guess():
+    guess=''
+    while guess not in ['0','1','2']:
+        guess = input('Pick 0, 1 or 2:  ')
+    return int(guess)
+
+def cup_game():
+    mixed_list = shuffle_list(mylist)
+    while True:
+        if mixed_list[player_guess()] == 'O':
+            print('Congratulations! You Won!')
+            break
+        else:
+            print('\n Try again')
+            pass
+cup_game()
+~~~
+
 ## Anthropomorphism
 ~~~
 def myfunc(mystring):
