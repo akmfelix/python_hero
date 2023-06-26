@@ -275,3 +275,32 @@ def blackjack(a,b,c):
         return 'BUST'
 ~~~
 
+## Summer 69
+SUMMER OF '69: Return the sum of the numbers in the array, except ignore sections of numbers starting with a 6 and extending to the next 9 (every 6 will be followed by at least one 9). Return 0 for no numbers.
+~~~
+def summer_69(arr):
+    it = iter(arr)
+    total_sum = 0
+    for i in arr:
+        if i==6:
+            9 in it
+        else:
+            total_sum += i
+    return total_sum
+
+
+def summer69_v2(arr):
+    total_sum = 0
+    omit = False
+    for i in arr:
+        if omit:
+            if i==9:
+                omit = False
+        elif i==6:
+            omit = True
+        else:
+            total_sum += i
+    return total_sum
+~~~
+
+
