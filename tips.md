@@ -303,4 +303,56 @@ def summer69_v2(arr):
     return total_sum
 ~~~
 
+## Spy game
+SPY GAME: Write a function that takes in a list of integers and returns True if it contains 007 in order.
+~~~
+def spy_game(nums):
+    agent_code = [0,0,7]
+    for i in nums:
+        if i == agent_code[0]:
+            print(agent_code)
+            agent_code.pop(0)
+    return len(agent_code)==0
+
+
+def spy_game2(nums):
+    check = []
+    for i in nums:
+        if i==0:
+            if len(check)<=1:
+                check.append(i)
+        elif i==7:
+            if len(check)==2:
+                check.append(i)
+    print(check)
+    return check==[0,0,7]
+~~~
+
+## Count primes
+COUNT PRIMES: Write a function that returns the number of prime numbers that exist up to and including a given number
+~~~
+def count_primes(num):
+    primes = []
+    for i in range(2,num+1):
+        for p in primes:
+            if i%p == 0:
+                break
+        else:
+            primes.append(i)
+    return len(primes)
+
+
+def count_primes_v2(start, end):
+    primes = []
+    ctr = 0
+    for i in range(2, end+1):
+        for p in primes:
+            if i%p == 0:
+                break
+        else:
+            primes.append(i)
+            if i>=start:
+                ctr += 1
+    return (ctr, primes)
+~~~
 
