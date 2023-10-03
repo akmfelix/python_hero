@@ -48,12 +48,13 @@ c.NotebookApp.browser = 'C:/Program Files/Google/Chrome/Application/chrome.exe %
 * open a pull request
 * some test
 
-# Python
+## Python is dynamic language
 * Python uses dynamic typing, meaning you can reassign variables to different data types. This makes Python very flexible in assigning data types; it differs from other languages that are statically typed.
-* Variable assignment follows name = object, where a single equals sign = is an assignment operator
 ~~~
 my_dogs = 2
 my_dogs = ['Sammy', 'Frankie']
+type(my_dogs)
+# list
 ~~~
 
 ## Data structures
@@ -81,7 +82,15 @@ Since the 0.1 cannot get any closer to the exact value of 1/10 and 0.3 cannot ge
 Though the numbers cannot be made closer to their intended exact values, the round() function can be useful for post-rounding so that results with inexact values become comparable to one another:           
 `round(.1 + .1 + .1, 10) == round(.3, 10)`
 `True`
-
+~~~
+my_income_usd = 5000
+rate = 480
+my_income_kzt = my_income_usd * rate
+tax_rate = 0.185
+my_taxes = my_income_kzt * tax_rate
+my_pureincome_kzt = my_income_kzt - my_taxes
+# 1956000.0
+~~~
 ## String
 * Strings in Python are actually a sequence, which basically means Python keeps track of every element in the string as a sequence.
 * index. string[5]
