@@ -93,8 +93,9 @@ my_pureincome_kzt = my_income_kzt - my_taxes
 ~~~
 ## String
 * Strings in Python are actually a sequence, which basically means Python keeps track of every element in the string as a sequence.
-* index. string[5]
-* slice. string[start:stop:step]. string[::-1] reverse
+* indexing. reverse indexing. []. string[5]
+* slicing. string[start:stop:step]. string[::-1] reverse
+* \n - new line; \t - tab in print function
 * len() function
 * immutable. name='Almas' name[0]='R' - not correct
 * concatenation. last_letter= name[-1] name+last_letter -> Almass; letter='z' letter*3 -> zzz
