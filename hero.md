@@ -96,8 +96,7 @@ my_pureincome_kzt = my_income_kzt - my_taxes
 * \n - new line; \t - tab in print function
 * len() function
 * immutable. name='Almas' name[0]='R' - not correct
-* concatenation. last_letter= name[-1] name+last_letter -> Almass; letter='z' letter*3 -> zzz
-* methods. x.upper(); x.lower(); x.split() x.split('i')
+* methods. x.upper(); x.lower(); x.split() x.split('i') - a list of a string; methods does not affect original string.
 * .format(); 'String here {} then also {}'.format('smth1 or var','smth2'); print('The {2} {1} {0}'.format('fox','brown','quick')); print('The {q} {b} {f}'.format(f='fox',b='brown',q='quick')); x='The {1} {2} {0}'.format(f,q,b)
 * float formatting; {value:width.precision f}; print('the result was {r:1.2f}'.format(r=reuslt))
 * f format string; name='Jose' print(f'Hello, his name is {name}')
@@ -116,6 +115,14 @@ name = 'Sam'
 last_letters = name[1:]
 'P' + last_letters
 # Pam
+
+letter = 'a'
+letter*3
+# aaa
+
+x = 'Hi this is a string'
+x.split('i')
+# ['H', ' th', 's ', 's a str', 'ng']
 ~~~
 
 ~~~
