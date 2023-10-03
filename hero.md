@@ -51,10 +51,10 @@ c.NotebookApp.browser = 'C:/Program Files/Google/Chrome/Application/chrome.exe %
 # Python
 * Python uses dynamic typing, meaning you can reassign variables to different data types. This makes Python very flexible in assigning data types; it differs from other languages that are statically typed.
 * Variable assignment follows name = object, where a single equals sign = is an assignment operator
-```
+~~~
 my_dogs = 2
 my_dogs = ['Sammy', 'Frankie']
-```
+~~~
 
 ## Data structures
 * int. Integers
