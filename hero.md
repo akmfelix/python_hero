@@ -96,10 +96,8 @@ my_pureincome_kzt = my_income_kzt - my_taxes
 * \n - new line; \t - tab in print function
 * len() function
 * immutable. name='Almas' name[0]='R' - not correct
+* object.method(parameters)
 * methods. x.upper(); x.lower(); x.split() x.split('i') - a list of a string; methods does not affect original string.
-* .format(); 'String here {} then also {}'.format('smth1 or var','smth2'); print('The {2} {1} {0}'.format('fox','brown','quick')); print('The {q} {b} {f}'.format(f='fox',b='brown',q='quick')); x='The {1} {2} {0}'.format(f,q,b)
-* float formatting; {value:width.precision f}; print('the result was {r:1.2f}'.format(r=reuslt))
-* f format string; name='Jose' print(f'Hello, his name is {name}')
 ~~~
 mystring = 'abcdefghk'
 mystring[::-1]
@@ -126,11 +124,27 @@ x.split('i')
 ~~~
 
 ~~~
-print('The {q} {b} {f}'.format(f='fox',b='brown',q='quick'))
+print('This is a string {}'.format('INSERTED'))
+# This is a string INSERTED
 
-## f format string
+print('The {} {} {}'.format('fox','brown','quick'))
+# The fox brown quick
+
+print('The {2} {1} {0}'.format('fox','brown','quick'))
+# The quick brown fox
+
+print('The {q} {b} {f}'.format(f='fox',b='brown',q='quick'))
+# The quick brown fox
+
+# f fprmat string
 name='Almas' 
 print(f'Hello, Mr.{name}')
+
+# float formatting;
+# {value:width.precision f}
+result = 100/777
+print(f'The result was {result:10.4f}')
+# The result was     0.1287
 ~~~
 
 ## Lists
