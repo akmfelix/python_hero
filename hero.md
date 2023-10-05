@@ -148,23 +148,39 @@ print(f'The result was {result:10.4f}')
 ~~~
 
 ## Lists
+* Get object by INDEXING;
+* Lists are ordered sequences that can hold a variety of object types.
 * Lists are constructed with brackets [] and commas separating every element in the list.
-* Lists can actually hold different object types
-* Indexing and Slicing
-* We can also use + to concatenate lists, just like we did for strings. Note: This doesn't actually change the original list.
-* We can also use the * for a duplication method similar to strings
-* Use the append method to permanently add an item to the end of a list
-* Use pop to "pop off" an item from the list. By default pop takes off the last index, but you can also specify which index to pop off
-* We can use the sort method and the reverse methods to also effect your lists
-* Nesting Lists
-* List Comprehensions; first_col = [row[0] for row in matrix] [1, 4, 7]
-* .split()
+* Lists can actually hold different object types.
+* Lists are MUTABLE.
+* Indexing and Slicing.
+* +; We can also use + to concatenate lists, just like we did for strings. Note: This doesn't actually change the original list.
+* *; We can also use the * for a duplication method similar to strings.
+* len(mylist) - length of the list.
+* .append(var) - add an item to the list.
+* .pop(index) . By default pop takes off the last index, but you can also specify which index to pop off.
+* .sort() - it does not return anything;
+* .reverse() - it does not return anything;
+* Nesting Lists;
+* List Comprehensions; first_col = [row[0] for row in matrix] [1, 4, 7];
+* .split();
 
 ## Dictionaries
-* Mappings are a collection of objects that are stored by a key, unlike a sequence that stored objects by their relative position. This is an important distinction, since mappings won't retain order since they have objects defined by a key. A Python dictionary consists of a key and then an associated value. That value can be almost any Python object.
+* Get object by KEY;
+* STRING key;
+* Dictionaries are MUTABLE;
+* Dictionaries are unordered mappings for storing objects;
+* Key-Value pairs;
+* {'key1':'value1', 'key2':'value2'};
+* Objects are retrieved by key name;
+* d.keys() - to see all keys;
+* d.values() - all values;
+* d.items() - all pairs;
 ~~~
 mydict = {'k1':1,'k2':2,'k3':3}
-mydict['key2']  # call values by their key
+# call values by their key
+mydict['key2']
+# 2
 my_dict['key1'] = my_dict['key1'] - 123
 
 # nested dict
@@ -175,11 +191,6 @@ d['key1']['nestkey']['subnestkey']
 d = {} 
 d['animal'] = 'Dog' 
 d['answer'] = 42
-
-# dict methods
-d.keys()
-d.values()
-d.items()
 ~~~
 
 ## Tuples
