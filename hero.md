@@ -48,6 +48,11 @@ c.NotebookApp.browser = 'C:/Program Files/Google/Chrome/Application/chrome.exe %
 * open a pull request
 * some test
 
+# Tips
+~~~
+b = None
+~~~
+
 ## Python is dynamic language
 * Python uses dynamic typing, meaning you can reassign variables to different data types. This makes Python very flexible in assigning data types; it differs from other languages that are statically typed.
 ~~~
@@ -194,28 +199,52 @@ d['answer'] = 42
 ~~~
 
 ## Tuples
-* In Python tuples are very similar to lists, however, unlike lists they are immutable meaning they can not be changed. You would use tuples to present things that shouldn't be changed, such as days of the week, or dates on a calendar.
+* Tuples are immutable;
+* In Python tuples are very similar to lists, however, unlike lists they are immutable meaning they can not be changed.
+* (1,2,3)
+* You would use tuples to present things that shouldn't be changed, such as days of the week, or dates on a calendar.
 * t.index('one') .index to enter a value and return the index
 * t.count('one') .count to count the number of times a value appears
 
 ## Sets
 * Sets are an unordered collection of unique elements. We can construct them by using the set() function
+* myset = set(); {}
 * x.add(1) We add to sets with the add() method
 * Note the curly brackets. This does not indicate a dictionary! Although you can draw analogies as a set being a dictionary with only keys
 ~~~
 list1 = [1,1,2,2,3,4,5,6,1,1]
 set(list1)
+# {1,2,3}
 ~~~
 
 
 ## I/O with Basic files in python FILES
 * %%writefile test_file.txt can create files in jupyter notebook
 ~~~
-myfile = open('test.txt')
-myfile.seek(0)
+pwd
+# to show current directory in jupyter notebook
+
+# open file in a specific location
+myfile = open('C:\\Users\\00031730\\Desktop\\Python\\_Jupyter\\Complete-Python-3-Bootcamp-master\\00_own\\file_name.txt')
+
+%%writefile file_name.txt
+This is a first line
+This is a second line
+This is a third line
+# created a file with a name file_name.txt
+# and having 3 lines
+
+myfile = open('file_name.txt') # to open file
 myfile.read()
+# show text from file
+#'This is a first line\nThis is a second line\nThis is a third line\n'
+# if again run myfile.read() code it will show ''. Because after reading goes to the end of file. You will need to reset cursor.
+myfile.seek(0)
+# reset a cursor
 myfile.readlines()
+# ['This is a first line\n', 'This is a second line\n', 'This is a third line\n']
 myfile.close()
+# close text file
 ~~~
 
 * mode='r' is read only
