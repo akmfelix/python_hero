@@ -1,3 +1,17 @@
+~~~
+More Mathematical (and Harder) Practice:
+https://projecteuler.net/archives
+
+List of Practice Problems:
+http://www.codeabbey.com/index/task_list
+
+A SubReddit Devoted to Daily Practice Problems:
+https://www.reddit.com/r/dailyprogrammer
+
+A very tricky website with very few hints and touch problems (Not for beginners but still interesting)
+http://www.pythonchallenge.com/
+~~~
+
 https://realpython.com/python-not-operator/
 ##### How do I know what directory my Notebooks are being saved?
 To find out where your notebooks are type: pwd in a cell and run it with Shift+Enter. This will print your working directory.
@@ -247,17 +261,17 @@ myfile.close()
 # close text file
 ~~~
 
+~~~
+with open('file_name.txt') as new_file_name:
+    contents = new_file_name.read()
+# 'This is a first line\nThis is a second line\nThis is a third line\n' 
+~~~
+
 * mode='r' is read only
 * mode='w' is write only (will overwrite files or create new)
 * mode='a' is append only (will add onto files)
 * mode='r+' is reading and writing
 * mode='w+' is writing and reading (will overwrite files or create new)
-~~~
-with open('test.txt') as my_variable_name:
-  contents = my_variable_name.read()
-contents  
-~~~
-
 ~~~
 %%writefile test.txt
 Hello, this is a quick test file.
@@ -271,11 +285,12 @@ with open('test_file.txt', mode='a') as f:
 ~~~
 
 ~~~
-with open('abc', mode='w') as f:
+with open('abc.txt', mode='w') as f:
   f.write('I earn $4000 every month')
   
-with open('abc', mode='r') as f:
+with open('abc.txt', mode='r') as f:
   print(f.read())
+# 'I earn $4000 every month'
 ~~~
 
 ~~~
@@ -294,6 +309,14 @@ elif some_cond:
   some_code
 else:
   some_code
+
+hungry = True / False    # boolean value
+if hungry:
+    print('Feed me')
+else:
+    print("I'm not hungry")
+# Feed me
+# I'm not hungry
 ~~~
 
 ## for loops
@@ -302,6 +325,12 @@ else:
 my_iterable=[1,2,3]
 for item_name in my_iterable:
   print(item_name)
+
+for num in mylist:
+    if num%2==0:
+        print(num)
+    else:
+        print(f'Odd number: {num}')
   
 # tuple unpacking
 # duplicate structure of items
