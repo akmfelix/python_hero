@@ -353,39 +353,55 @@ for key,value in d.items():
 
 ## while loops
 * while loops will to continue execute a block of code while some conditions remains True
+~~~
+while some_boolean_condition:
+  # do_something
+else:
+  # do something different
+
+x = 50
+while x < 5:
+    print(f'x is {x}')
+    x += 1
+else:
+    print('x is greater than 5')
+~~~
+  
+### break; pass; continue;
 * break: breaks out of the current closest enclosing loop
 * continue: goes to the top of the closest enclosing loop
 * pass: does nothing at all
 
 ~~~
-x=0
-while x<5:
-  if x==2:
-    break
-  print(x)
-  x+=1
+x = [1,2,3]
+for i in x:
+    pass
+# do nothing, just pass piece of code
 
-x=0
-while x<10:
-    print('x is equal to: {}'.format(x))
-    x+=1
-    if x==4:
+mystring = 'Almas'
+for letter in mystring:
+    if letter == 'm':
         continue
+    print(f'The current letter is {letter}')
+# The current letter is A
+# The current letter is l
+# The current letter is a
+# The current letter is s
 
-x=[1,2,3]
-for item in x:
-  pass
+mystring = 'Almas'
+for letter in mystring:
+    if letter == 'm':
+        break
+    print(f'{letter}')
+# A
+# l
 
-mystring='Almas'
-for letter in mystring:
-  if letter == 'a':
-    continue
-  print(letter)
-  
-for letter in mystring:
-  if letter == 'a':
-    break
-  print(letter)  
+x = 0
+while x < 5:
+    if x == 2:
+        break
+    print(x)
+    x += 1
 ~~~
 
 ## useful operators
