@@ -285,18 +285,18 @@ with open('test_file.txt', mode='a') as f:
 ~~~
 
 ~~~
+x = open('myfile.txt', 'w')
+x.write('This is my file')
+x.close()
+~~~
+
+~~~
 with open('abc.txt', mode='w') as f:
   f.write('I earn $4000 every month')
   
 with open('abc.txt', mode='r') as f:
   print(f.read())
 # 'I earn $4000 every month'
-~~~
-
-~~~
-x = open('myfile.txt', 'w')
-x.write('This is my file')
-x.close()
 ~~~
 
 
@@ -326,12 +326,14 @@ my_iterable=[1,2,3]
 for item_name in my_iterable:
   print(item_name)
 
+----------------------------------------------------
 for num in mylist:
     if num%2==0:
         print(num)
     else:
         print(f'Odd number: {num}')
   
+----------------------------------------------------
 # tuple unpacking
 # duplicate structure of items
 mylist = [(1,2),(3,4),(5,6)]  
@@ -339,10 +341,12 @@ for (a,b) in mylist:
   print(a)
   print(b)
   
+----------------------------------------------------
 for a,b in mylist:
   print(a)
   print(b)  
   
+----------------------------------------------------
 d = {'k1':1,'k2':2,'k3':3}
 for key,value in d.items():
   print(key, value)
@@ -359,6 +363,7 @@ while some_boolean_condition:
 else:
   # do something different
 
+----------------------------------------------------
 x = 50
 while x < 5:
     print(f'x is {x}')
@@ -378,6 +383,7 @@ for i in x:
     pass
 # do nothing, just pass piece of code
 
+----------------------------------------------------
 mystring = 'Almas'
 for letter in mystring:
     if letter == 'm':
@@ -388,6 +394,7 @@ for letter in mystring:
 # The current letter is a
 # The current letter is s
 
+----------------------------------------------------
 mystring = 'Almas'
 for letter in mystring:
     if letter == 'm':
@@ -396,6 +403,7 @@ for letter in mystring:
 # A
 # l
 
+----------------------------------------------------
 x = 0
 while x < 5:
     if x == 2:
@@ -405,58 +413,54 @@ while x < 5:
 ~~~
 
 ## useful operators
+* range  - generator function, range(start, stop, step).
+* list(range(2,8,2)) - to create a list from list
+* enumerate - cant take an iterable object.
+* zip - zip together two lists.
+~~~
+for num in range(2,9,2):
+    print(num)
+# 2
+# 4
+# 6
+# 8
+~~~
 
 ~~~
-for num in range(0,11,2):
-  print(num)
-  
-list(range(0,11,2))  
+list(range(0,9,2))
+# [0, 2, 4, 6, 8]
 ~~~
 
-#### enumerate
-* can take any iterable object
 ~~~
-counter=0
-for letter in 'abcde':
-    print(f'at index position {counter} the letter is {letter}')
-    counter+=1
-at index position 0 the letter is a
-at index position 1 the letter is b
-at index position 2 the letter is c
-at index position 3 the letter is d
-at index position 4 the letter is e    
+index_count = 0
+for letter in 'abc':
+    print(f'At index count {index_count} the letter is {letter}')
+    index_count += 1
+# At index count 0 the letter is a
+# At index count 1 the letter is b
+# At index count 2 the letter is c
 
-counter=0
-word='abcde'
+----------------------------------------------------
+index_count = 0
+word = 'abc'
 for letter in word:
-  print(word[counter])
-  counter += 1
-a
-b
-c
-d
-e  
-  
+    print(f'{word[index_count]}')
+    index_count += 1
+# a
+# b
+# c
+
+----------------------------------------------------
+word = 'abc'
 for item in enumerate(word):
-  print(item)
-(0,'a')  
-(1,'b')
+    print(item)
+# (0, 'a')
+# (1, 'b')
+# (2, 'c')
 ~~~
 
-#### zip function
-* zips together two function
-* will zip only the shortest list
-~~~
-mylist1 = [1,2,3]
-mylist2 = ['a','b','c']
-for item in zip(mylist1,mylist2):
-  print(item)
-  
-list(zip(mylist1,mylist2))
-~~~  
-# (1,'a')  
-# (2,'b')
-# (3,'c')
+
+
 
 #### in, max, min, random
 ~~~
