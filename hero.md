@@ -418,6 +418,8 @@ while x < 5:
 * list(range(2,8,2)) - to create a list from list
 * enumerate - cant take an iterable object.
 * zip - zip together two lists.
+* in - operator
+### range
 ~~~
 for num in range(2,9,2):
     print(num)
@@ -427,11 +429,13 @@ for num in range(2,9,2):
 # 8
 ~~~
 
+### list
 ~~~
 list(range(0,9,2))
 # [0, 2, 4, 6, 8]
 ~~~
 
+### enumerate
 ~~~
 index_count = 0
 for letter in 'abc':
@@ -441,7 +445,7 @@ for letter in 'abc':
 # At index count 1 the letter is b
 # At index count 2 the letter is c
 
-----------------------------------------------------
+___________________________________________________
 index_count = 0
 word = 'abc'
 for letter in word:
@@ -451,7 +455,7 @@ for letter in word:
 # b
 # c
 
-----------------------------------------------------
+___________________________________________________
 word = 'abc'
 for item in enumerate(word):
     print(item)
@@ -460,26 +464,46 @@ for item in enumerate(word):
 # (2, 'c')
 ~~~
 
-
-
-
-#### in, max, min, random
+### zip
 ~~~
-x in [1,3,'a','b','x']
-'mykey' in {'mykey':1}
-
-# Quickly check the minimum or maximum of a list with these functions
-max(mylist)
-min(mylist)
-
-from random import shuffle
-mylist=[1,2,3,4,5,6,7,8,9,10]
-shuffle(mylist)
-
-# random integer
-from random import randint
-randint(0,100)
+list(zip(mylist1, mylist2))
+# [(1, 'a'), (2, 'b'), (3, 'c')]
 ~~~
+
+### in 
+~~~
+====================================================
+'x' in ['a','b','x','x']
+# True
+
+====================================================
+'Almas' in 'Almas is wealthy!'
+# True
+
+====================================================
+'k1' in {'k1':123, 'k2':['abc']}
+# True
+
+d = {'k1':345}
+345 in d.values()
+# True
+
+d = {'k1':3456}
+3456 in d.items()
+# False
+~~~
+
+### in, max, min, random
+~~~
+
+
+~~~
+
+
+
+
+
+
 
 #### input
 ~~~
