@@ -326,27 +326,28 @@ my_iterable=[1,2,3]
 for item_name in my_iterable:
   print(item_name)
 
-----------------------------------------------------
+====================================================
 for num in mylist:
     if num%2==0:
         print(num)
     else:
         print(f'Odd number: {num}')
   
-----------------------------------------------------
+====================================================
 # tuple unpacking
 # duplicate structure of items
 mylist = [(1,2),(3,4),(5,6)]  
 for (a,b) in mylist:
   print(a)
   print(b)
+# 1
+# 2
+# 3
+# 4
+# 5
+# 6  
   
-----------------------------------------------------
-for a,b in mylist:
-  print(a)
-  print(b)  
-  
-----------------------------------------------------
+====================================================
 d = {'k1':1,'k2':2,'k3':3}
 for key,value in d.items():
   print(key, value)
@@ -363,7 +364,7 @@ while some_boolean_condition:
 else:
   # do something different
 
-----------------------------------------------------
+====================================================
 x = 50
 while x < 5:
     print(f'x is {x}')
@@ -383,7 +384,7 @@ for i in x:
     pass
 # do nothing, just pass piece of code
 
-----------------------------------------------------
+====================================================
 mystring = 'Almas'
 for letter in mystring:
     if letter == 'm':
@@ -394,7 +395,7 @@ for letter in mystring:
 # The current letter is a
 # The current letter is s
 
-----------------------------------------------------
+====================================================
 mystring = 'Almas'
 for letter in mystring:
     if letter == 'm':
@@ -403,7 +404,7 @@ for letter in mystring:
 # A
 # l
 
-----------------------------------------------------
+====================================================
 x = 0
 while x < 5:
     if x == 2:
