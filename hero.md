@@ -319,7 +319,7 @@ else:
 # I'm not hungry
 ~~~
 
-## for loops
+## Loops. for loops
 * Many objects in Python are iterable, meaning we can iterate over every element in the object
 ~~~
 my_iterable=[1,2,3]
@@ -356,7 +356,7 @@ for key,value in d.items():
 # k3 3
 ~~~
 
-## while loops
+## Loops. while loops
 * while loops will to continue execute a block of code while some conditions remains True
 ~~~
 while some_boolean_condition:
@@ -373,7 +373,7 @@ else:
     print('x is greater than 5')
 ~~~
   
-### break; pass; continue;
+### Loops. break; pass; continue;
 * break: breaks out of the current closest enclosing loop
 * continue: goes to the top of the closest enclosing loop
 * pass: does nothing at all
@@ -413,7 +413,7 @@ while x < 5:
     x += 1
 ~~~
 
-## useful operators
+## Useful Operators
 * range  - generator function, range(start, stop, step).
 * list(range(2,8,2)) - to create a list from list
 * enumerate - cant take an iterable object.
@@ -495,24 +495,41 @@ d = {'k1':3456}
 
 ### in, max, min, random
 ~~~
+mylist = [10,20,30,40,50]
+min(mylist)
+# 10
 
-
+mylist = [10,20,30,40,50]
+max(mylist)
+# 50
 ~~~
 
+### random library
+~~~
+# shuffle() - does not return anything, its inplace operator.
+from random import shuffle
+mylist = [1,2,3,4,5,6,7,8,9,10]
+shuffle(mylist)
+mylist
+# [9, 7, 6, 3, 5, 1, 10, 4, 2, 8]
 
+# randint(lower_range, upper_range) - quickly grab random integer. can save it
+from random import randint
+ri = randint(0,100)
+ri
+# 11
+~~~
 
-
-
-
-
-#### input
+### input
 ~~~
 result = input('what is your age?')
 int(result)
 ~~~
 
 
-## List comprehension
+## List Comprehensions
+* List comprehension are a unique way of quickly creating a list with Python.
+* If you find yourself using a for loop along with .append() to create a list, LC are a good alternative.
 ~~~
 mystring = 'hello'
 mylist=[]
