@@ -437,6 +437,7 @@ list(range(0,9,2))
 
 ### enumerate
 ~~~
+___________________________________________________
 index_count = 0
 for letter in 'abc':
     print(f'At index count {index_count} the letter is {letter}')
@@ -466,6 +467,7 @@ for item in enumerate(word):
 
 ### zip
 ~~~
+___________________________________________________
 list(zip(mylist1, mylist2))
 # [(1, 'a'), (2, 'b'), (3, 'c')]
 ~~~
@@ -499,6 +501,7 @@ d = {'k1':3456}
 * max - python standard function
 * min - python standard function
 ~~~
+___________________________________________________
 mylist = [10,20,30,40,50]
 min(mylist)
 # 10
@@ -513,6 +516,7 @@ max(mylist)
 * shuffle() - does not return anything, its inplace operator.
 * randint(lower_range, upper_range) - quickly grab random integer. can save it
 ~~~
+___________________________________________________
 from random import shuffle
 mylist = [1,2,3,4,5,6,7,8,9,10]
 shuffle(mylist)
@@ -528,6 +532,7 @@ ri
 ### input
 * Remember! input - always get an input as string.
 ~~~
+___________________________________________________
 result = input('what is your age?')
 int(result)
 ~~~
@@ -537,6 +542,7 @@ int(result)
 * List comprehension are a unique way of quickly creating a list with Python.
 * If you find yourself using a for loop along with .append() to create a list, LC are a good alternative.
 ~~~
+___________________________________________________
 mystring = 'hello'
 mylist=[]
 for letter in mystring:
@@ -577,6 +583,7 @@ mylist = [x if x%2==0 else 'ODD' for x in range(0,11)]
 
 ## Nested loops
 ~~~
+___________________________________________________
 mylist=[]
 for x in [1,2,3]:
     for y in ['a','b','c']:
