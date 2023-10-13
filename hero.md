@@ -606,30 +606,36 @@ mylist = [x*y for x in ['a','b','c'] for y in [1,2,3]]
 # ['a', 'aa', 'aaa', 'b', 'bb', 'bbb', 'c', 'cc', 'ccc']
 ~~~
 
-#### Methods
+## Methods
 * python documentation
+* the PYTHON STANDARD LIBRARY DOCUMENTATION
 ~~~
+___________________________________________________
 # help function, description of method
 help(mylist.insert)
 ~~~
 
 ## Functions
-* Creating clean repeatable code is a key part of becoming an effective programmer
-* Functions allow us to create blocks of code that can be easily executed many times, without needing constantly rewrite the entire block od code
+* Creating clean repeatable code is a key part of becoming an effective programmer.
+* Functions allow us to create blocks of code that can be easily executed many times, without needing constantly rewrite the entire block od code.
 ~~~
+___________________________________________________
 def name_of_function(name):
   print(Hello + ' ' +'Mr.'name)
 name_of_function('Almas')  
 
+___________________________________________________
 # if name is not provided use default value
 def say_hello(name='Default'):
   print(f'Hello {name}')
 
+___________________________________________________
 # return
 def add_num(a,b):
   return a+b
 result = add_num(10,20)  
 
+___________________________________________________
 def check_even_list(num_list):
     for num in num_list:
         if num%2==0:
@@ -638,6 +644,7 @@ def check_even_list(num_list):
             pass
     return False
     
+___________________________________________________
 # return only even numbers
 def check_even_numbers(num_list):
     even_numbers=[]
@@ -651,6 +658,7 @@ def check_even_numbers(num_list):
 
 ### tuple unpacking in functions
 ~~~
+___________________________________________________
 car_prices = [('Hyundai',19500),('Kia',18000),('Pajero',25000)]
 def car_decision(car_prices):
     car_maxprice = 0
@@ -664,6 +672,7 @@ def car_decision(car_prices):
 
 ### multiple functions
 ~~~
+___________________________________________________
 from random import shuffle
 mylist = ['','O','']
 
@@ -689,8 +698,9 @@ guess = player_guess()
 check_guess(mixedup_list, guess)
 ~~~
 
-#### shuffle game
+### shuffle game
 ~~~
+___________________________________________________
 from random import shuffle
 
 mylist = ['','O','']
@@ -718,7 +728,7 @@ mixedlist = shuffle_list(mylist)
 check_guess(mixedlist)
 ~~~
 
-# ARGS and KWARGS
+# # ARGS and KWARGS
 ~~~
 *args - arguments
 *kwargs - keyword arguments
