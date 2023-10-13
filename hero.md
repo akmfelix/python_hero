@@ -618,23 +618,36 @@ help(mylist.insert)
 ## Functions
 * Creating clean repeatable code is a key part of becoming an effective programmer.
 * Functions allow us to create blocks of code that can be easily executed many times, without needing constantly rewrite the entire block od code.
+* def - keyword
+* paranthesis at the end. In order to take variables and use it in function.
+* ''' docstring.
+* Functions can accept arguments to be passed by the user.
+* data type issues.
 ~~~
 ___________________________________________________
-def name_of_function(name):
-  print(Hello + ' ' +'Mr.'name)
-name_of_function('Almas')  
+def my_function(name):
+    print('Hello ' + name)
+my_function('Almas')
+# Hello Almas
 
 ___________________________________________________
 # if name is not provided use default value
 def say_hello(name='Default'):
   print(f'Hello {name}')
+# Hello Default
 
 ___________________________________________________
 # return
 def add_num(a,b):
   return a+b
-result = add_num(10,20)  
+result = add_num(10,20)
+# 30
 
+___________________________________________________
+def even_check(num):
+    return num%2==0
+# even_check(8) True
+# even_check(5) False
 ___________________________________________________
 def check_even_list(num_list):
     for num in num_list:
@@ -654,6 +667,16 @@ def check_even_numbers(num_list):
         else:
             pass
     return even_numbers
+
+___________________________________________________
+def even_numbers(mylist):
+    return [item if item%2==0 else 'ODD' for item in mylist]
+# even_numbers([1,5,3,9,5,5])  ['ODD', 'ODD', 'ODD', 'ODD', 'ODD', 'ODD']
+
+def even_numbers(mylist):
+    return [item for item in mylist if item%2==0]
+# even_numbers([1,5,3,8,5,5])  [8]
+
 ~~~
 
 ### tuple unpacking in functions
