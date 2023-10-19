@@ -693,65 +693,7 @@ def car_decision(car_prices):
     return(car_name, car_maxprice)
 ~~~
 
-### multiple functions
-~~~
-___________________________________________________
-from random import shuffle
-mylist = ['','O','']
-
-def shuffle_list(mylist):
-    shuffle(mylist)
-    return mylist
-
-def player_guess():
-    user_guess=''
-    while user_guess not in ['0','1','2']:
-        user_guess = input('Choose 0, 1 or 2: ')
-    return int(user_guess)
-
-def check_guess(mylist, user_guess):
-    if mylist[user_guess] == 'O':
-        print('correct')
-    else:
-        print('wrong')
-    print(mylist)
-
-mixedup_list = shuffle_list(mylist)
-guess = player_guess()
-check_guess(mixedup_list, guess)
-~~~
-
-### shuffle game
-~~~
-___________________________________________________
-from random import shuffle
-
-mylist = ['','O','']
-
-def shuffle_list(mylist):
-    shuffle(mylist)
-    return mylist
-
-def player_guess():
-    user_guess=''
-    while user_guess not in ['0','1','2']:
-        user_guess = input('Choose 0, 1 or 2: ')
-    return int(user_guess)
-
-def check_guess(mylist):
-    while True:
-        guess = player_guess()
-        if mylist[guess] == 'O':
-            print('correct')
-            break
-        else:
-            print('wrong')
-    print(mylist)
-mixedlist = shuffle_list(mylist)
-check_guess(mixedlist)
-~~~
-
-# # ARGS and KWARGS
+## ARGS and KWARGS
 ~~~
 *args - arguments
 *kwargs - keyword arguments
