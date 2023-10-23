@@ -700,36 +700,49 @@ def car_decision(car_prices):
 ~~~
 * args
 * by default python will take all the parameters that are passed in and set them to be inside a tuple.
-* returns back tuple
+* args - returns back a tuple.
 ~~~
+___________________________________________________
 def myfunc(a,b,c=0,d=0,e=0):
     return sum((a,b)) * 0.05
+# myfunc() takes from 2 to 5 positional arguments.
 
+___________________________________________________
 def myfunc(*args):
+    print(args)
     return sum(args) * 0.05
-    
-def myfunc(*args):
-    return print(args)
-# myfunc(1,2,3,4,5)    
-# (1, 2, 3, 4, 5)
+# as many arguments as I want
+myfunc(10,20,70,80,100)
+# (10, 20, 70, 80, 100)
+# 14.0
 ~~~
 
 * kwargs
-* builds a dictionary of key value pairs
+* builds a dictionary of key value pairs.
+* kwargs - return back a dictionary.
 ~~~
 def myfunc(**kwargs):
+    print(kwargs)
     if 'fruits' in kwargs:
         print(f'My fruit of choice is {kwargs["fruits"]}')
     else:
         print(f'I did not find any fruit here. I found {kwargs["chocolate"]}')
+
+myfunc(fruits='orange', chocolate='snickers')
+# {'fruits': 'orange', 'chocolate': 'snickers'}
+# My fruit of choice is orange.
+
+myfunc(fruits111='orange', chocolate='snickers')
+# I did not find any fruit here. I found snickers.
 ~~~
 
 ~~~
+___________________________________________________
 def myfunc(*args, **kwargs):
     print(args)
     print(kwargs)
     print(f'I would like {args[0]} {kwargs["food"]}')
-myfunc(10,20,30,40,fruit='apple', lady='sex', food='sushi')
+myfunc(10,20,30,40,  fruit='apple', lady='sex', food='sushi')
 (10, 20, 30, 40)
 {'fruit': 'apple', 'lady': 'sex', 'food': 'sushi'}
 I would like 10 sushi
