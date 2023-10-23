@@ -93,11 +93,11 @@ check_guess(mixedup_list, guess)
 ~~~
 from random import shuffle
 
-mylist = ['','O','']
+mycup = ['','','','','','','','','','','O']
 
-def shuffle_list(mylist):
-    shuffle(mylist)
-    return mylist
+def shuffle_cup(mycup):
+    shuffle(mycup)
+    return mycup
 
 def player_guess():
     user_guess=''
@@ -105,18 +105,18 @@ def player_guess():
         user_guess = input('Choose 0, 1 or 2: ')
     return int(user_guess)
 
-def check_guess(mylist):
+def player_guess():
     while True:
-        guess = player_guess()
-        if mylist[guess] == 'O':
-            print('correct')
-            break
-        else:
-            print('wrong')
-continue
-    print(mylist)
-mixedlist = shuffle_list(mylist)
-check_guess(mixedlist)
+        try:
+            guess = int(input('pick a number between 0 - 10:\n'))
+            if guess>=0 and guess<=10:
+                break
+            print('pick correct number.')
+        except ValueError:
+            print('give a number')
+    return guess
+
+cup_game()
 ~~~
 
 ## Guess Game
