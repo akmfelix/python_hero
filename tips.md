@@ -200,6 +200,22 @@ cup_game()
 
 ## Anthropomorphism
 ~~~
+_______________________________________________________________
+def myfunc(mystring):
+    mylist = [x[1].upper() if x[0]%2==0 else x[1].lower()  for x in enumerate(mystring)]
+    return ''.join(mylist)
+
+_______________________________________________________________
+def myfunc(mystring):
+    mylist=[]
+    for i in enumerate(mystring):
+        if i[0]%2==0:
+            mylist.append(i[1].upper())
+        else:
+            mylist.append(i[1].lower())
+    return ''.join(mylist)
+
+_______________________________________________________________
 def myfunc(mystring):
     modstring=''
     for index in range(len(mystring)):
@@ -208,7 +224,8 @@ def myfunc(mystring):
         else:
             modstring += mystring[index].upper()
     return modstring
-    
+
+_______________________________________________________________    
 def myfunc(mystring):
     string = ''
     for index, letter in enumerate(mystring):
