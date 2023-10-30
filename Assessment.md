@@ -199,4 +199,14 @@ def summer_69(arr):
 # 14
 ~~~
 
-### 
+## SPY GAME.
+Write a function that takes in a list of integers and returns True if it contains 007 in order.
+~~~
+def spy_game(nums):
+    agent_team = [0,0,7, 'spy']
+    for i in nums:
+        if i == agent_team[0]:
+            agent_team.pop(0)
+    return len(agent_team)==1
+
+~~~
