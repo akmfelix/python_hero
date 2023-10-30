@@ -1,5 +1,6 @@
 ## Statements Assessment
-### Use for, .split(), and if to create a Statement that will print out words that start with 's':
+## Print out words that start with 's'
+Use for, .split(), and if to create a Statement that will print out words that start with 's':
 ~~~
 # method 1
 st = 'Print only the words that start with s in this sentence'
@@ -12,7 +13,8 @@ mylist = [item for item in st.split() if item[0]=='s']
 mylist
 ~~~
 
-### Use range() to print all the even numbers from 0 to 10.
+## Print all the even numbers from 0 to 10.
+Use range() to print all the even numbers from 0 to 10.
 ~~~
 list(range(0,10,2))
 # [0, 2, 4, 6, 8]
@@ -28,13 +30,15 @@ mylist = [x*y for x in [2,4,6] for y in [1,10,1000]]
  
 ~~~
 
-### Use List comprehension to create a list of all numbers between 1 and 50 that are divisible by 3
+## Create a list of all numbers between 1 and 50 that are divisible by 3.
+Use List comprehension to create a list of all numbers between 1 and 50 that are divisible by 3.
 ~~~
 mylist = [x for x in range(1,50) if x%3==0]
 # [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48]
 ~~~
 
-### Go through the string below and if the length of a word is even print "even!"
+## Print "even!".
+Go through the string below and if the length of a word is even print "even!".
 ~~~
 st = 'Print every word in this sentence that has an even number of letters'
 mylist = []
@@ -46,7 +50,8 @@ mylist = [x for x in st.split() if len(x)%2==0]
 # ['word', 'in', 'this', 'sentence', 'that', 'an', 'even', 'number', 'of']
 ~~~
 
-### Write a program that prints the integers from 1 to 100. But for multiples of three print "Fizz" instead of the number, and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz"
+## FizzBuzz
+Write a program that prints the integers from 1 to 100. But for multiples of three print "Fizz" instead of the number, and for the multiples of five print "Buzz". For numbers which are multiples of both three and five print "FizzBuzz".
 ~~~
 for num in range(1,101):
   if num%5==0 and num%3==0:
@@ -59,14 +64,16 @@ for num in range(1,101):
     print(num)
 ~~~
 
-### Use List Comprehension to create a list of the first letters of every word in the string below
+## List Comprehension.
+Use List Comprehension to create a list of the first letters of every word in the string below.
 ~~~
 st = 'Create a list of the first letters of every word in this string'
 result = [letter[0] for letter in st.split()]
 # ['C', 'a', 'l', 'o', 't', 'f', 'l', 'o', 'e', 'w', 'i', 't', 's']
 ~~~
 
-### ANIMAL CRACKERS: Write a function takes a two-word string and returns True if both words begin with same letter
+## ANIMAL CRACKERS.
+Write a function takes a two-word string and returns True if both words begin with same letter.
 ~~~
 def animal_crackers(text):
     wordlist = text.split()
@@ -75,7 +82,8 @@ def animal_crackers(text):
 # True
 ~~~
 
-### OLD MACDONALD: Write a function that capitalizes the first and fourth letters of a name
+## OLD MACDONALD.
+Write a function that capitalizes the first and fourth letters of a name.
 ~~~
 def old_macdonald(name):
     text = name[0].upper()+name[1:3]+name[3].upper()+name[4:]
@@ -88,14 +96,15 @@ def old_macdonald2(name):
         return 'give more than 3 symbols'
 ~~~
 
-### MASTER YODA: Given a sentence, return a sentence with the words reversed
+## MASTER YODA.
+Given a sentence, return a sentence with the words reversed.
 ~~~
 def master_yoda(text):
     return text[::-1]
 
 def master_yoda2(text):
     reversed_list = []
-    for i in text:
+    for i in text:    # .SPLIT()   !!!!
         reversed_list = [i] + reversed_list
     return ''.join(reversed_list)
 
@@ -103,7 +112,8 @@ def master_yoda2(text):
 # 'emoh ma I'
 ~~~
 
-### ALMOST THERE: Given an integer n, return True if n is within 10 of either 100 or 200
+### ALMOST THERE.
+Given an integer n, return True if n is within 10 of either 100 or 200.
 ~~~
 def almost_there(n):
     return abs(n-100)<=10 or abs(n-200)<=10
@@ -131,6 +141,11 @@ def paper_doll(text):
     for i in text:
         triple_string += i*3
     return triple_string
+
+def paper_doll(text):
+    mylist = [x*3 for x in text]        
+    return ''.join(mylist)
+
 # paper_doll('Hello')
 # 'HHHeeellllllooo'
 ~~~
@@ -150,14 +165,16 @@ def blackjack(a,b,c):
 
 ~~~
 def summer_69(arr):
-    total_sum=0
-    omit=False
+    omit = False
+    total_sum = 0
     for i in arr:
         if omit:
             if i==9:
                 omit=False
+            else:
+                continue
         elif i==6:
-            omit=True
+            omit = True
         else:
             total_sum += i
     return total_sum
@@ -165,12 +182,19 @@ def summer_69(arr):
 def summer_69_v2(arr):
     total_sum = 0
     it = iter(arr)
-    for i in arr:
-        if i == 6:
-            9 in it
+    for i in it:
+        if i == 6:              # if i!=6 or 9 not in it:
+            9 in it             # tot += i
         else:
             total_sum += i
     return total_sum
+
+def summer_69(arr):
+    it = iter(arr)
+    mylist = [x for x in it 
+             if x!=6 or 9 not in it]
+    return sum(mylist)
+
 # summer_69([2, 1, 6, 9, 11])
 # 14
 ~~~
