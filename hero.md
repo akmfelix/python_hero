@@ -721,6 +721,7 @@ myfunc(10,20,70,80,100)
 * builds a dictionary of key value pairs.
 * kwargs - return back a dictionary.
 ~~~
+___________________________________________________
 def myfunc(**kwargs):
     print(kwargs)
     if 'fruits' in kwargs:
@@ -749,6 +750,7 @@ I would like 10 sushi
 ~~~
 
 ~~~
+___________________________________________________
 def myfunc(*args):
     even_nums=[]
     for num in args:
@@ -757,5 +759,60 @@ def myfunc(*args):
     return even_nums
 ~~~
 
+## MAP, FILTER, LAMBDA functions
+### MAP
+~~~
+___________________________________________________
+def square(nums):
+    return nums**2
+nums = [1,2,3,4,5]
+for item in map(square, nums):
+    print(item)
+list(map(square, nums))
+# [1, 4, 9, 16, 25]
+___________________________________________________
+def splicer(string):
+    if len(string)%2==0:
+        return 'EVEN'
+    else:
+        return string[0]
+string = ['Almas', 'Tolkyn', 'Mirana', 'Aslan', 'Tomiris']
+list(map(splicer, string))
+# ['A', 'EVEN', 'EVEN', 'A', 'T']
+~~~
+### FILTER
+~~~
+___________________________________________________
+def check_even(nums):
+    return nums%2==0
+nums = [1,2,3,4,5,6,7,8]
+list(filter(check_even, nums))
+# [2, 4, 6, 8]
+~~~
 
+### LAMBDA
+~~~
+___________________________________________________
+def square(num):
+    return num**2
+# -->
+def square(num): return num**2
+# -->
+square = lambda num: num**2
+square(5)
+# 25
+
+___________________________________________________
+# where to use lambda
+nums = [1,2,3,4,5,6,7,8]
+list(map(lambda num: num**2, nums))
+# [1, 4, 9, 16, 25, 36, 49, 64]
+
+list(filter(lambda num: num%2==0, nums))
+# [2, 4, 6, 8]
+~~~
+
+## Nested Statements and Scope
+#### LEGB rule format.
+So LEGB stands for Local, Enclosing function locals, Global and Built-in.
 
