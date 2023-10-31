@@ -815,4 +815,6 @@ list(filter(lambda num: num%2==0, nums))
 ## Nested Statements and Scope
 #### LEGB rule format.
 So LEGB stands for Local, Enclosing function locals, Global and Built-in.
-
+* 1 Local
+* 2 Enclosing
+* 3 Global
