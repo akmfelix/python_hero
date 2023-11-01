@@ -319,4 +319,96 @@ up_low('Hello Mr. Rogers, how are you this fine Tuesday?')
 # Original string: Hello Mr. Rogers, how are you this fine Tuesday?
 # No. of Upper case characters :  4
 # No. of Lower case characters :  33
+
+___________________________________________________
+def up_low(s):
+    d = {'upper':0, 'lower':0}
+    for i in s:
+        if i.isupper():
+            d['upper'] += 1
+        elif i.islower():
+            d['lower'] += 1
+        else:
+            pass
+    print(f'Original String :  {s}')
+    print(f"No. of Upper case characters :  {d['upper']}")
+    print(f"No. of Lower case Characters :  {d['lower']}")
+up_low('Hello Mr. Rogers, how are you this fine Tuesday?')
+# Original string: Hello Mr. Rogers, how are you this fine Tuesday?
+# No. of Upper case characters :  4
+# No. of Lower case characters :  33
 ~~~
+
+## Unique elements
+Write a Python function that takes a list and returns a new list with unique elements of the first list.
+~~~
+___________________________________________________
+def unique_list(lst):
+    return list(set(lst))
+
+unique_list([1,1,1,1,2,2,3,3,3,3,4,5])
+# {1, 2, 3, 4, 5}
+
+___________________________________________________
+def unique_list(lst):
+    unique = []
+    for i in lst:
+        if i not in unique:
+            unique.append(i)
+    return unique
+unique_list([1,1,1,1,2,2,3,3,3,3,4,5])
+# {1, 2, 3, 4, 5}
+~~~
+
+## Total multiply
+Write a Python function to multiply all the numbers in a list.
+~~~
+___________________________________________________
+def multiply(numbers):  
+    total_multiply = 1
+    for i in numbers:
+        total_multiply *= i
+    return total_multiply
+multiply([1,2,3,-4])
+# -24
+~~~
+
+## Palindrom
+Write a Python function that checks whether a word or phrase is palindrome or not.
+~~~
+___________________________________________________
+def palindrome(s):
+    reverse = []
+    for i in s.replace(' ',''):
+        reverse = [i]+reverse
+    return ''.join(reverse)==s.replace(' ','')
+
+def palindrom(s):
+    return s.replace(' ','') == s.replace(' ','')[::-1]
+
+palindrome('nurses run')
+# True
+~~~
+
+## Pangram
+Write a Python function to check whether a string is pangram or not. (Assume the string passed in does not have any punctuation)
+~~~
+import string
+def ispangram(str1, alphabet=string.ascii_lowercase):
+    str1 = str1.replace(' ','').lower()
+    myalphabet = set(str1)
+    return myalphabet==set(alphabet)
+
+ispangram("The quick brown fox jumps over the lazy dog")
+# True
+~~~
+
+
+
+
+
+
+
+
+
+
