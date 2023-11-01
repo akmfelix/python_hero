@@ -337,3 +337,20 @@ def func(x):
     return x
 x = func(x)
 ~~~
+
+## Alphabet range in Python
+~~~
+# Method 1
+import string
+string.ascii_lowercase
+list(string.ascii_lowercase)
+
+# Method 2
+list(map(chr, range(97, 123)))
+
+# Method 3
+list(map(chr, range(ord('a'), ord('z')+1)))
+
+# ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+~~~
+
