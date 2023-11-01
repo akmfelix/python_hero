@@ -818,3 +818,60 @@ So LEGB stands for Local, Enclosing function locals, Global and Built-in.
 * 1 Local
 * 2 Enclosing
 * 3 Global
+~~~
+___________________________________________________
+# GLOBAL
+name = 'THIS IS GLOBAL VARIABLE'
+
+def greet():
+    #ENCLOSING
+    name = 'Almas'
+    
+    def hello():
+        #LOCAL
+        name = 'Local variable'
+        print('Hello' + name)
+    hello()
+greet()
+~~~
+
+~~~
+___________________________________________________
+x = 50
+def func(x):
+    print(f'x is = {x}')
+    #  LOCAL
+    x = 200
+    print(f'Locally Reassignment of {x}')
+
+func(x)
+# x is = 50
+# Locally Reassignment of 200
+
+print(x)
+# 50
+~~~
+
+~~~
+# If you want to be x global from inside a function
+x = 50
+def func():
+    global x
+    print(f'x is = {x}')
+    #  LOCAL
+    x = 200
+    print(f'Locally Reassignment of {x}')
+# 200
+~~~
+
+~~~
+# if you still want to affect to global variable
+x = 50
+def func(x):
+    print(f'x is = {x}')
+    #  LOCAL
+    x = 200
+    print(f'Locally Reassignment of {x}')
+    return x
+x = func(x)
+~~~
