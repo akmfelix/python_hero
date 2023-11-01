@@ -256,3 +256,67 @@ def print_big(letter):
     for pattern in alphabet[letter.upper()]:
         print(patterns[pattern])
 ~~~
+
+# Functions Homework
+## Volume
+Write a function that computes the volume of a sphere given its radius.
+~~~
+___________________________________________________
+def cube_rad(rad):
+    return rad**3
+
+def vol():
+    #x = cube_rad(rad)
+    pi = 3.14
+    return (4/3) * pi * cube_rad(rad)
+
+rad = 2
+vol()
+# 33.49333333333333
+
+___________________________________________________
+pi = 3.14
+def vol(rad):
+    return (4/3)*pi*rad**3
+# 33.49333333333333
+~~~
+
+## Range
+Write a function that checks whether a number is in a given range (inclusive of high and low)
+~~~
+___________________________________________________
+def ran_check(num,low,high):
+    return num in range(low, high+1)
+ran_check(5,2,7)
+# True
+
+def ran_check(num, low, high):
+    if num in range(low, high+1):
+        return print(f'{num} is in range between {low} and {high}')
+    else:
+        return print(f'{num} is not in a given range')
+ran_check(5,2,7)
+# 5 is in range between 2 and 7
+~~~
+
+## Count strings
+Write a Python function that accepts a string and calculates the number of upper case letters and lower case letters.
+~~~
+___________________________________________________
+def up_low(s):
+    str_list = [x for x in s if x not in ['.','?',',','"',' ']]
+    str_low = []
+    str_up = []
+    for i in str_list:
+        if i.isupper():
+            str_up.append(i)
+        else:
+            str_low.append(i)
+    print(f'Original string: {s}')
+    print(f'No. of Upper case characters :  {len(str_up)}')
+    print(f'No. of Lower case characters :  {len(str_low)}')
+up_low('Hello Mr. Rogers, how are you this fine Tuesday?')
+# Original string: Hello Mr. Rogers, how are you this fine Tuesday?
+# No. of Upper case characters :  4
+# No. of Lower case characters :  33
+~~~
