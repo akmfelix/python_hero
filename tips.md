@@ -236,197 +236,48 @@ def myfunc(mystring):
     return string  
 ~~~
 
-## Lesser of two evens
-LESSER OF TWO EVENS: Write a function that returns the lesser of two given numbers if both numbers are even, but returns the greater if one or both numbers are odd
-~~~
-def lesser_of_two_evens(a,b):
-    if a%2==0 and b%2==0:
-        if a<b:
-            return a
-        elif a>b:
-            return b
-    else:
-        if a<b:
-            return b
-        elif a>b:
-            return a
-~~~
+## Game List
 
-## Animal crackers
-ANIMAL CRACKERS: Write a function takes a two-word string and returns True if both words begin with same letter
 ~~~
-def animal_crackers(text):
-    mylist=text.split()
-    if len(mylist)>1:
-        if mylist[0][0]==mylist[1][0]:
-            return True
-        else:
-            return False
-    else:
-        return print('list is out of range')
-~~~
+game_list = [0,1,2,3,4,5]
 
-## Makes twenty
-MAKES TWENTY: Given two integers, return True if the sum of the integers is 20 or if one of the integers is 20. If not, return False
-~~~
-def makes_twenty(n1,n2):
-    if sum((n1,n2))==20:
-        return True
-    elif n1==20 and n2==20:
-        return False
-    elif n1==20 or n2==20:
-        return True
-    else:
-        return False
-~~~
+def display_game(game_list):
+    print(f'Here is the current list: {game_list}')
 
-## Old MacDonald
-OLD MACDONALD: Write a function that capitalizes the first and fourth letters of a name
-~~~
-def old_macdonald(name):
-    newstring=''
-    for index, letter in enumerate(name):
-        if index==0 or index==3:
-            newstring += letter.capitalize()
-        else:
-            newstring += letter
-    return newstring
-~~~
+def position_choice():
+    while True:
+        try:
+            position_choice = int(input('Pick a postition (0-5): '))
+            if position_choice<0 or position_choice>5:
+                print('Sorry, invalid choice!')
+                continue
+            break
+        except ValueError:
+            print('Input must be a digit!')
+    return int(position_choice)
 
-## Master Yoda
-MASTER YODA: Given a sentence, return a sentence with the words reversed
+def replacement_value(game_list, index_position):
+        user_placement = input('Type a string to place at position:  ')
+        game_list[index_position] = user_placement
+        return game_list
+
+def game_on():
+    keep_playing = True
+    display_game(game_list)
+    while keep_playing:
+        index_position = position_choice()
+        replacement_value(game_list, index_position)
+        display_game(game_list)
+        user_answer=''
+        while user_answer not in ['Y', 'N']:
+            user_answer = input('Keep playing?  ')
+            if user_answer not in ['Y','N']:
+                print('Sorry, acceptable answers are only Y or N!')
+            elif user_answer == 'Y':
+                continue
+            elif user_answer == 'N':
+                keep_playing = False
+    return game_list
+
+game_on()
 ~~~
-def master_yoda(text):
-    text_list = text.split()
-    return ' '.join(text_list[::-1])
-    
-def master_yoda(text):
-    return ' '.join(text.split()[::-1])
-    
-def master_yoda(text):
-    mylist=[]
-    for item in text.split():
-        mylist = [item] + mylist
-    return ' '.join(mylist)    
-~~~    
-
-## Almost there
-ALMOST THERE: Given an integer n, return True if n is within 10 of either 100 or 200
-~~~
-def almost_there(n):
-    if abs(100-n)<=10 or abs(200-n)<=10:
-        return True
-    else:
-        return False
-~~~
-
-## Find 33
-Given a list of ints, return True if the array contains a 3 next to a 3 somewhere.
-~~~
-def has33(nums):
-    for i in range(0,len(nums)-1):
-        if nums[i]==3 and nums[i+1]==3:
-            return True
-    return False
-    
-def has33(nums):
-    for i in range(0,len(nums)-1):
-        if nums[i:i+2] == [3,3]:
-            return True
-    return False
-~~~
-
-## Blackjack
-BLACKJACK: Given three integers between 1 and 11, if their sum is less than or equal to 21, return their sum. If their sum exceeds 21 and there's an eleven, reduce the total sum by 10. Finally, if the sum (even after adjustment) exceeds 21, return 'BUST'
-~~~
-def blackjack(a,b,c):
-    if sum((a,b,c))<=21:
-        return sum((a,b,c))
-    elif sum((a,b,c))>21 and (11 in (a,b,c)):
-        return sum((a,b,c))-10
-    elif sum((a,b,c))>21:
-        return 'BUST'
-~~~
-
-## Summer 69
-SUMMER OF '69: Return the sum of the numbers in the array, except ignore sections of numbers starting with a 6 and extending to the next 9 (every 6 will be followed by at least one 9). Return 0 for no numbers.
-~~~
-def summer_69(arr):
-    it = iter(arr)
-    total_sum = 0
-    for i in arr:
-        if i==6:
-            9 in it
-        else:
-            total_sum += i
-    return total_sum
-
-
-def summer69_v2(arr):
-    total_sum = 0
-    omit = False
-    for i in arr:
-        if omit:
-            if i==9:
-                omit = False
-        elif i==6:
-            omit = True
-        else:
-            total_sum += i
-    return total_sum
-~~~
-
-## Spy game
-SPY GAME: Write a function that takes in a list of integers and returns True if it contains 007 in order.
-~~~
-def spy_game(nums):
-    agent_code = [0,0,7]
-    for i in nums:
-        if i == agent_code[0]:
-            print(agent_code)
-            agent_code.pop(0)
-    return len(agent_code)==0
-
-
-def spy_game2(nums):
-    check = []
-    for i in nums:
-        if i==0:
-            if len(check)<=1:
-                check.append(i)
-        elif i==7:
-            if len(check)==2:
-                check.append(i)
-    print(check)
-    return check==[0,0,7]
-~~~
-
-## Count primes
-COUNT PRIMES: Write a function that returns the number of prime numbers that exist up to and including a given number
-~~~
-def count_primes(num):
-    primes = []
-    for i in range(2,num+1):
-        for p in primes:
-            if i%p == 0:
-                break
-        else:
-            primes.append(i)
-    return len(primes)
-
-
-def count_primes_v2(start, end):
-    primes = []
-    ctr = 0
-    for i in range(2, end+1):
-        for p in primes:
-            if i%p == 0:
-                break
-        else:
-            primes.append(i)
-            if i>=start:
-                ctr += 1
-    return (ctr, primes)
-~~~
-
-
