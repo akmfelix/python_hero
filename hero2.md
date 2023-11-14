@@ -1,0 +1,72 @@
+# Object Oriented Programming
+## OOP
+* OOP allows programmers to create their own objects that have methods and attributes.
+* These methods act as functions that use information about the object, as well as the object itselt to return results, or change the current object.
+* OOP allows us to create code that is repeatable and organized.
+* For much larger scripts of Python code, functions by themselves aren't enough for organization and repeatablity. Commonly repeated tasks and objects can be defined with OOP to create code that is more usable.
+* __init__ - can basically be thought as the constructor for a class, and it's going to be called automatically when you create an instance of the class.
+* self - keyword. It represents the instance of the object itself.
+* One of the issues with Python being so flexible is that later on when you're a programmer and expecting other people to use your classes, you're going to need to add in some documentation to let them know, hey, I'm expecting strings for breed, strings for name, and spots should be a Boolean, because right now, I could say something like, 'no spots'.
+* But right now, what I really wanna focus on is the basic idea that you use the class keyword with capitalized names, you define the name of your class. And the very first method in your class is going to be a special method called the __init__ method. And this init method acts as a constructor. And we have this self keyword which is a reference to the instance of the class. So that instance of the class is then going to have these .attributes that you pass in based off what parameters you define up here. And by convention, the parameter name, the attribute name are the same, which means you will see it three times, once when you pass it in, and then once here for the attribute, and once for the actual assignment call.
+
+
+
+~~~
+___________________________________________________
+class Sample():
+    pass
+
+# instance of a Sample class
+my_sample = Sample()
+type(my_sample)
+# __main__.Sample
+
+___________________________________________________
+class Dog():
+    def __init__(self, breed):
+        self.breed = breed
+my_dog = Dog(breed='Lab')
+my_dog.breed
+# 'Lab'
+
+___________________________________________________
+class Dog():
+    def __init__(self, mybreed):
+        # Attributes
+        # We take in the argument
+        # Assign it using self.attribute_name
+        self.my_attribute = mybreed
+my_dog = Dog(mybreed='Huskie')
+my_dog.my_attribute
+# 'Huskie'
+~~~
+~~~
+___________________________________________________
+class Dog():
+    def __init__(self, breed, name, spots):
+        self.breed = breed
+        self.name = name
+        self.spots = spots
+my_dog = Dog(breed='Lab', name='Sammy', spots = True)
+my_dog = Dog.breed
+# Lab
+my_dog.name
+# Sammy
+my_dog.spots
+# True
+~~~
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
