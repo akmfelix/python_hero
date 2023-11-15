@@ -200,9 +200,9 @@ mydog.bark()
 * For Loop.
 
 
-## So here we have a Dog class and a Cat class. Each of them has the speak method. When called each objects speak method, returns a result.
-## That's unique to the object. That is to say it's unique for the dog to say woof and it's unique to the cat to say meow,
-## as well as their names are going to be unique to that particular instance of the class.
+##### So here we have a Dog class and a Cat class. Each of them has the speak method. When called each objects speak method, returns a result.
+##### That's unique to the object. That is to say it's unique for the dog to say woof and it's unique to the cat to say meow,
+##### as well as their names are going to be unique to that particular instance of the class.
 ~~~
 ___________________________________________________
 class Dog():
