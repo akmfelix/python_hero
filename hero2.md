@@ -174,6 +174,7 @@ I am an animal
 
 
 class Dog(Animal):
+## use already defined method from base class
     def __init__(self):
         Animal.__init__(self)
         print('Dog created')
@@ -197,9 +198,10 @@ mydog.bark()
 ~~~
 
 ### Polymorphism
-* in Python, Polymorphism refers to the way in which different object classes can share the same method name
+* in Python, Polymorphism refers to the way in which different object classes can share the same method name \n
 * and then those methods can be called from the same place even though a variety of different objects might be passed in.
-* For Loop.
+* Basic idea is you have these two separate classes that happen to share the same method name, allowing you to then call those same method names \n
+* without needing to worry about the specific class that's being passed in.
 
 
 ~~~
