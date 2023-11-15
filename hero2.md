@@ -150,13 +150,13 @@ class Circle():
 * And you can always add in more methods.
 * SO that's how inheritance works.
 
-
-* Create an instance of the Animal() class.
-* I have base class Animal and then I have my other class of Dog, which is going to inherit the methods of the Animal class.
-* Also all those old methods that where available for the Animal are now available for mydog,
-* because I was able to derive them from my base class Animal. It's a main idea for inheritance.
 ~~~
 ___________________________________________________
+## Create an instance of the Animal() class.
+## I have base class Animal and then I have my other class of Dog, which is going to inherit the methods of the Animal class.
+## Also all those old methods that where available for the Animal are now available for mydog,
+## because I was able to derive them from my base class Animal. It's a main idea for inheritance.
+
 class Animal():
     def __init__(self):
         print('ANIMAL CREATED')
@@ -201,11 +201,13 @@ mydog.bark()
 * and then those methods can be called from the same place even though a variety of different objects might be passed in.
 * For Loop.
 
-* So here we have a Dog class and a Cat class. Each of them has the speak method. When called each objects speak method, returns a result.
-* That's unique to the object. That is to say it's unique for the dog to say woof and it's unique to the cat to say meow,
-* as well as their names are going to be unique to that particular instance of the class.
+
 ~~~
 ___________________________________________________
+## So here we have a Dog class and a Cat class. Each of them has the speak method. When called each objects speak method, returns a result.
+## That's unique to the object. That is to say it's unique for the dog to say woof and it's unique to the cat to say meow,
+## as well as their names are going to be unique to that particular instance of the class.
+
 class Dog():
     def __init__(self, name):
         self.name = name
@@ -229,7 +231,47 @@ ___________________________________________________
 for pet in [mydog,mycat]:
     print(type(pet))
     print(pet.speak())
+# <class '__main__.Dog'>
+# Morris says Whoof!
+# <class '__main__.Cat'>
+# Cucumber says Meow!
 
+___________________________________________________
+def pet_speak(pet):
+    print(pet.speak())
+pet_speak(mydog)
+# Morris says Whoof!
+pet_speak(mycat)
+# Cucumber says Meow!
+~~~
+
+* Base class - as to raise an error in polymorphism
+~~~
+___________________________________________________
+class Animal():
+    def __init__(self, name):
+        self.name = name
+    def speak(self):
+        raise NotImplementedError('Subclass must implenet this abstract method')
+myanimal = Animal('fred')
+myanimal.speak()
+# NotImplementedError: Subclass must implement this abstract method.
+
+class Dog(Animal):
+    def speak(self):
+        return self.name + ' says whoof'
+
+class Cat(Animal):
+    def speak(self):
+        return self.name + ' says meow'
+
+mydog = Dog('Morris')
+mycat = Cat('Cucumber')
+
+mydog.speak()
+# 'Morris says whoof'
+mycat.speak()
+'Cucumber says meow'
 ~~~
 
 
