@@ -197,14 +197,14 @@ mydog.bark()
 ### Polymorphism
 * in Python, Polymorphism refers to the way in which different object classes can share the same method name
 * and then those methods can be called from the same place even though a variety of different objects might be passed in.
-* 
+* For Loop.
 
-~~~
-___________________________________________________
+
 ## So here we have a Dog class and a Cat class. Each of them has the speak method. When called each objects speak method, returns a result.
 ## That's unique to the object. That is to say it's unique for the dog to say woof and it's unique to the cat to say meow,
 ## as well as their names are going to be unique to that particular instance of the class.
-
+~~~
+___________________________________________________
 class Dog():
     def __init__(self, name):
         self.name = name
@@ -223,6 +223,12 @@ mydog.speak()
 mycat.speak()
 # 'Morris says Whoof!'
 # 'Cucumber says Meow!'
+
+___________________________________________________
+for pet in [mydog,mycat]:
+    print(type(pet))
+    print(pet.speak())
+
 ~~~
 
 
