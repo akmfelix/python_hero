@@ -150,6 +150,11 @@ class Circle():
 * And you can always add in more methods.
 * SO that's how inheritance works.
 
+
+* Create an instance of the Animal() class.
+* I have base class Animal and then I have my other class of Dog, which is going to inherit the methods of the Animal class.
+* Also all those old methods that where available for the Animal are now available for mydog,
+* because I was able to derive them from my base class Animal. It's a main idea for inheritance.
 ~~~
 ___________________________________________________
 class Animal():
@@ -167,10 +172,7 @@ myanimal.eat()
 myanimal.who_am_i()
 I am an animal
 
-## Create an instance of the Animal() class.
-## I have base class Animal and then I have my other class of Dog, which is going to inherit the methods of the Animal class.
-## Also all those old methods that where available for the Animal are now available for mydog,
-## because I was able to derive them from my base class Animal. It's a main idea for inheritance.
+
 class Dog(Animal):
     def __init__(self):
         Animal.__init__(self)
@@ -199,10 +201,9 @@ mydog.bark()
 * and then those methods can be called from the same place even though a variety of different objects might be passed in.
 * For Loop.
 
-
-##### So here we have a Dog class and a Cat class. Each of them has the speak method. When called each objects speak method, returns a result.
-##### That's unique to the object. That is to say it's unique for the dog to say woof and it's unique to the cat to say meow,
-##### as well as their names are going to be unique to that particular instance of the class.
+* So here we have a Dog class and a Cat class. Each of them has the speak method. When called each objects speak method, returns a result.
+* That's unique to the object. That is to say it's unique for the dog to say woof and it's unique to the cat to say meow,
+* as well as their names are going to be unique to that particular instance of the class.
 ~~~
 ___________________________________________________
 class Dog():
