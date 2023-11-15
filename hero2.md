@@ -1,5 +1,5 @@
 # Object Oriented Programming
-## OOP
+## OOP in Python
 * OOP allows programmers to create their own objects that have methods and attributes.
 * These methods act as functions that use information about the object, as well as the object itselt to return results, or change the current object.
 * OOP allows us to create code that is repeatable and organized.
@@ -141,10 +141,89 @@ class Circle():
         # or return Circle.pi * self.radius**2
 ~~~
 
+## Inheritance and Polymorphism
+### Inheritance
+* An Inheritance is a way to form new classes using classes that have already been defined.
+* Benefits from using an Inheritance are the ability to reuse code that you've already worked on and to reduce the complexity of a program.
+* The main idea in INHERITANCE is that: all you need to do is inherit from your base class and now you have access to all those old methods.
+* And if you ever want to overwrite them, you can just overwrite them. Recall the same method name and then do whatever you want there.
+* And you can always add in more methods.
+* SO that's how inheritance works.
 
+~~~
+___________________________________________________
+class Animal():
+    def __init__(self):
+        print('ANIMAL CREATED')
+    def who_am_i(self):
+        print('I am an animal')
+    def eat(self):
+        print('I am eating')
 
+myanimal = Animal()
+# ANIMAL CREATED
+myanimal.eat()
+# I am eating
+myanimal.who_am_i()
+I am an animal
 
+## Create an instance of the Animal() class.
+## I have base class Animal and then I have my other class of Dog, which is going to inherit the methods of the Animal class.
+## Also all those old methods that where available for the Animal are now available for mydog,
+## because I was able to derive them from my base class Animal. It's a main idea for inheritance.
+class Dog(Animal):
+    def __init__(self):
+        Animal.__init__(self)
+        print('Dog created')
+## Additionally you can OVERWRITE older methods.
+    def eat(self):
+        print('I am a Dog and eating')
+## Add on methods.
+    def bark(self):
+        print('WHOOF!')
+mydog = Dog()
+# ANIMAL CREATED
+# Dog created
+mydog.eat()
+# I am a Dog and eating
+mydog.who_am_i()
+# I am an animal
+myanimal.who_am_i()
+# I am an animal
+mydog.bark()
+# WHOOF!
+~~~
 
+### Polymorphism
+* in Python, Polymorphism refers to the way in which different object classes can share the same method name
+* and then those methods can be called from the same place even though a variety of different objects might be passed in.
+* 
+
+~~~
+___________________________________________________
+## So here we have a Dog class and a Cat class. Each of them has the speak method. When called each objects speak method, returns a result.
+## That's unique to the object. That is to say it's unique for the dog to say woof and it's unique to the cat to say meow,
+## as well as their names are going to be unique to that particular instance of the class.
+
+class Dog():
+    def __init__(self, name):
+        self.name = name
+    def speak(self):
+        return self.name + ' says Whoof!'
+
+class Cat():
+    def __init__(self, name):
+        self.name = name
+    def speak(self):
+        return self.name + ' says Meow!'
+
+mydog = Dog('Morris')
+mycat = Cat('Cucumber')
+mydog.speak()
+mycat.speak()
+# 'Morris says Whoof!'
+# 'Cucumber says Meow!'
+~~~
 
 
 
