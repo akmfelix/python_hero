@@ -276,5 +276,38 @@ mycat.speak()
 'Cucumber says meow'
 ~~~
 
+## Special methods/ To use built-in Python libraries on a class
 
+~~~
+___________________________________________________
+## And what this does, if there's ever any function that asks for the string representation of your book class,
+## then it's going to return whatever this method returns, which is why it's a special method.
+
+class Book():
+    def __init__(self, title, author, pages):
+        self.title = title
+        self.author = author
+        self.pages = pages
+        
+    def __str__(self):
+        return f'{self.title} written by {self.author}'
+    
+    def __len__(self):
+        return self.pages
+## In order to basically specify extra things that may occur when you call delete
+    def __del__(self):
+        print('A book object has been deleted.')
+
+b = Book(title='Python Rocks', author='Head First', pages=500)
+print(b)
+# Python Rocks by Head First
+len(b)
+# 500
+
+## delete object
+del b
+# A book object has been deleted
+## name 'b' is not defined
+
+~~~
 
