@@ -133,8 +133,8 @@ class Circle():
     pi = 3.14
     def __init__(self, radius=1):
         self.radius = radius
-        self.circumference = 2 * self.pi * self.radius
-        # or self.circumference = 2 * self.pi * Circle.radius
+        self.circumference = 2 * Circle.pi * self.radius
+        # or self.circumference = 2 * Circle.pi * pi.radius
     # METHOD
     def area(self):
         return self.pi * self.radius**2
