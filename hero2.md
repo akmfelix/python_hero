@@ -1,5 +1,6 @@
 # Object Oriented Programming
 User defined objects are created using the class keyword. The class is a blueprint that defines the nature of a future object. From classes we can construct instances. An instance is a specific object created from a particular class. For example, above we created the object lst which was an instance of a list object.                
+                
 By convention we give classes a name that starts with a capital letter. Note how x is now the reference to our new instance of a Sample class. In other words, we instantiate the Sample class. Inside of the class we currently just have pass. But we can define class attributes and methods. An attribute is a characteristic of an object. A method is an operation we can perform with the object.
 ## OOP in Python
 * OOP allows programmers to create their own objects that have methods and attributes.
