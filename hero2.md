@@ -25,7 +25,10 @@ print(type(x))
 my_sample = Sample()
 type(my_sample)
 # __main__.Sample
+~~~
 
+* __init__ method is used to initialize the attributes of an object
+~~~
 ___________________________________________________
 class Dog():
     def __init__(self, breed):
@@ -33,20 +36,18 @@ class Dog():
 my_dog = Dog(breed='Lab')
 my_dog.breed
 # 'Lab'
+~~~
 
+* Each attribute in a class definition begins with a reference to the instance object. It is by convention named self. The breed is the argument. The value is passed during the class instantiation.
+~~~
 ___________________________________________________
 class Dog():
     def __init__(self, mybreed):
-        # Attributes
-        # We take in the argument
-        # Assign it using self.attribute_name
         self.my_attribute = mybreed
 my_dog = Dog(mybreed='Huskie')
 my_dog.my_attribute
 # 'Huskie'
-~~~
 
-~~~
 ___________________________________________________
 class Dog():
     def __init__(self, breed, name, spots):
@@ -62,11 +63,12 @@ my_dog.spots
 # True
 ~~~
 
+* In Python there are also class object attributes. These Class Object Attributes are the same for any instance of the class.
+* Notice that attributes never had open and close parentheses. And that's because attributes aren't really something that you execute. Instead it's just something that's a characteristic of the object that you call back.
 ~~~
 ___________________________________________________
 class Dog():
-    # class object attribute
-    # same for any instance of a class
+    # class object attribute same for any instance of a class
     species = 'mammal'
     
     def _init(self, breed, name, spots):
@@ -79,12 +81,11 @@ my_dog = Dog.species
 # 'mammal'
 ~~~
 
-* Notice that attributes never had open and close parentheses. And that's because attributes aren't really something that you execute. Instead it's just something that's a characteristic of the object that you call back.
+* Methods are functions defined inside the body of a class. They are used to perform operations with the attributes of our objects. Methods are a key concept of the OOP paradigm. They are essential to dividing responsibilities in programming, especially in large applications.
+* You can basically think of methods as functions acting on an Object that take the Object itself into account through its self argument.
 ~~~
 ___________________________________________________
 class Dog():
-    # class object attribute
-    # same for any instance of a class
     species = 'mammal'
     
     def __init__(self, breed, name):
@@ -100,10 +101,7 @@ my_dog.bark()
 
 ___________________________________________________
 class Dog():
-    # class object attribute
-    # same for any instance of a class
     species = 'mammal'
-    
     def __init__(self, breed, name):
         self.breed = breed
         self.name = name
@@ -133,19 +131,35 @@ my_circle.pi
 # 3.14
 my_circle.radius
 # 5
+~~~
 
+* In the _init_ lower above, in order to calculate the area attribute, we had to call Circle.pi. This is because the object does not yet have its own .pi attribute, so we call the Class Object Attribute pi instead.
+* In the setRadius method, however, we'll be working with an existing Circle object that does have its own pi attribute. Here we can use either Circle.pi or self.pi.
+~~~
 ___________________________________________________
-class Circle():
-    # CLASS OBJECT ATTRIBUTE
+class Circle:
     pi = 3.14
+
+    # Circle gets instantiated with a radius (default is 1)
     def __init__(self, radius=1):
-        self.radius = radius
-        self.circumference = 2 * Circle.pi * self.radius
-        # or self.circumference = 2 * Circle.pi * pi.radius
-    # METHOD
-    def area(self):
-        return self.pi * self.radius**2
-        # or return Circle.pi * self.radius**2
+        self.radius = radius 
+        self.area = radius * radius * Circle.pi
+
+    # Method for resetting Radius
+    def setRadius(self, new_radius):
+        self.radius = new_radius
+        self.area = new_radius * new_radius * self.pi
+
+    # Method for getting Circumference
+    def getCircumference(self):
+        return self.radius * self.pi * 2
+
+
+c = Circle()
+
+print('Radius is: ',c.radius)
+print('Area is: ',c.area)
+print('Circumference is: ',c.getCircumference())
 ~~~
 
 ## Inheritance and Polymorphism
