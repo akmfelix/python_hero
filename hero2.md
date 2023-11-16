@@ -167,6 +167,8 @@ print('Circumference is: ',c.getCircumference())
 ~~~
 
 ## Inheritance and Polymorphism
+Inheritance is a way to form new classes using classes that have already been defined. The newly formed classes are called derived classes, the classes that we derive from are called base classes. Important benefits of inheritance are code reuse and reduction of complexity of a program. The derived classes (descendants) override or extend the functionality of base classes (ancestors).        
+
 ### Inheritance
 * An Inheritance is a way to form new classes using classes that have already been defined.
 * Benefits from using an Inheritance are the ability to reuse code that you've already worked on and to reduce the complexity of a program.
@@ -174,52 +176,39 @@ print('Circumference is: ',c.getCircumference())
 * And if you ever want to overwrite them, you can just overwrite them. Recall the same method name and then do whatever you want there.
 * And you can always add in more methods.
 * SO that's how inheritance works.
-
+##### +
+* In this example, we have two classes: Animal and Dog. The Animal is the base class, the Dog is the derived class. 
+* The derived class inherits the functionality of the base class. It is shown by the eat() method.
+* The derived class modifies existing behavior of the base class. shown by the whoAmI() method.
+* Finally, the derived class extends the functionality of the base class, by defining a new bark() method.
 ~~~
 ___________________________________________________
-## Create an instance of the Animal() class.
-## I have base class Animal and then I have my other class of Dog, which is going to inherit the methods of the Animal class.
-## Also all those old methods that where available for the Animal are now available for mydog,
-## because I was able to derive them from my base class Animal. It's a main idea for inheritance.
-
-class Animal():
+class Animal:
     def __init__(self):
-        print('ANIMAL CREATED')
-    def who_am_i(self):
-        print('I am an animal')
+        print("Animal created")
+    def whoAmI(self):
+        print("Animal")
     def eat(self):
-        print('I am eating')
-
-myanimal = Animal()
-# ANIMAL CREATED
-myanimal.eat()
-# I am eating
-myanimal.who_am_i()
-I am an animal
-
+        print("Eating")
 
 class Dog(Animal):
-## use already defined method from base class
     def __init__(self):
         Animal.__init__(self)
-        print('Dog created')
-## Additionally you can OVERWRITE older methods.
-    def eat(self):
-        print('I am a Dog and eating')
-## Add on methods.
+        print("Dog created")
+    def whoAmI(self):
+        print("Dog")
     def bark(self):
-        print('WHOOF!')
-mydog = Dog()
-# ANIMAL CREATED
+        print("Woof!")
+
+d = Dog()
+# Animal created
 # Dog created
-mydog.eat()
-# I am a Dog and eating
-mydog.who_am_i()
-# I am an animal
-myanimal.who_am_i()
-# I am an animal
-mydog.bark()
-# WHOOF!
+d.whoAmI()
+# Dog
+d.eat()
+# Eating
+d.bark()
+# Woof!
 ~~~
 
 ### Polymorphism
