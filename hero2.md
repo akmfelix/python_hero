@@ -26,7 +26,7 @@ my_sample = Sample()
 type(my_sample)
 # __main__.Sample
 ~~~
-
+##### A
 * __init__ method is used to initialize the attributes of an object
 ~~~
 ___________________________________________________
@@ -38,6 +38,7 @@ my_dog.breed
 # 'Lab'
 ~~~
 
+##### A
 * Each attribute in a class definition begins with a reference to the instance object. It is by convention named self. The breed is the argument. The value is passed during the class instantiation.
 ~~~
 ___________________________________________________
@@ -63,6 +64,7 @@ my_dog.spots
 # True
 ~~~
 
+##### A
 * In Python there are also class object attributes. These Class Object Attributes are the same for any instance of the class.
 * Notice that attributes never had open and close parentheses. And that's because attributes aren't really something that you execute. Instead it's just something that's a characteristic of the object that you call back.
 ~~~
@@ -81,6 +83,7 @@ my_dog = Dog.species
 # 'mammal'
 ~~~
 
+##### A
 * Methods are functions defined inside the body of a class. They are used to perform operations with the attributes of our objects. Methods are a key concept of the OOP paradigm. They are essential to dividing responsibilities in programming, especially in large applications.
 * You can basically think of methods as functions acting on an Object that take the Object itself into account through its self argument.
 ~~~
@@ -133,6 +136,7 @@ my_circle.radius
 # 5
 ~~~
 
+##### A
 * In the _init_ lower above, in order to calculate the area attribute, we had to call Circle.pi. This is because the object does not yet have its own .pi attribute, so we call the Class Object Attribute pi instead.
 * In the setRadius method, however, we'll be working with an existing Circle object that does have its own pi attribute. Here we can use either Circle.pi or self.pi.
 ~~~
