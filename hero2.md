@@ -212,18 +212,14 @@ d.bark()
 ~~~
 
 ### Polymorphism
-* in Python, Polymorphism refers to the way in which different object classes can share the same method name \n
-* and then those methods can be called from the same place even though a variety of different objects might be passed in.
-* Basic idea is you have these two separate classes that happen to share the same method name, allowing you to then call those same method names \n
-* without needing to worry about the specific class that's being passed in.
+We've learned that while functions can take in different arguments, methods belong to the objects they act on. In Python, polymorphism refers to the way in which different object classes can share the same method name, and those methods can be called from the same place even though a variety of different objects might be passed in.
 
-
+* Here we have a Dog class and a Cat class, and each has a .speak() method. When called, each object's .speak() method returns a result unique to the object.
+* There a few different ways to demonstrate polymorphism. First, with a for loop.
+* Another is with functions.
+* In both cases we were able to pass in different object types, and we obtained object-specific results from the same mechanism.
 ~~~
 ___________________________________________________
-## So here we have a Dog class and a Cat class. Each of them has the speak method. When called each objects speak method, returns a result.
-## That's unique to the object. That is to say it's unique for the dog to say woof and it's unique to the cat to say meow,
-## as well as their names are going to be unique to that particular instance of the class.
-
 class Dog():
     def __init__(self, name):
         self.name = name
@@ -243,7 +239,6 @@ mycat.speak()
 # 'Morris says Whoof!'
 # 'Cucumber says Meow!'
 
-___________________________________________________
 for pet in [mydog,mycat]:
     print(type(pet))
     print(pet.speak())
@@ -252,7 +247,6 @@ for pet in [mydog,mycat]:
 # <class '__main__.Cat'>
 # Cucumber says Meow!
 
-___________________________________________________
 def pet_speak(pet):
     print(pet.speak())
 pet_speak(mydog)
@@ -261,11 +255,11 @@ pet_speak(mycat)
 # Cucumber says Meow!
 ~~~
 
-* Base class - as to raise an error in polymorphism
+* A more common practice is to use abstract classes and inheritance. An abstract class is one that never expects to be instantiated. For example, we will never have an Animal object, only Dog and Cat objects, although Dogs and Cats are derived from Animals.
 ~~~
 ___________________________________________________
 class Animal():
-    def __init__(self, name):
+    def __init__(self, name):  # Constructor of the class
         self.name = name
     def speak(self):
         raise NotImplementedError('Subclass must implenet this abstract method')
@@ -274,7 +268,7 @@ myanimal.speak()
 # NotImplementedError: Subclass must implement this abstract method.
 
 class Dog(Animal):
-    def speak(self):
+    def speak(self):       # Abstract method, defined by convention only
         return self.name + ' says whoof'
 
 class Cat(Animal):
@@ -291,12 +285,11 @@ mycat.speak()
 ~~~
 
 ## Special methods/ To use built-in Python libraries on a class
-
+* Classes in Python can implement certain operations with special method names.
+* __init__(), __str__(), __len__() and __del__() methods
+* These special methods are defined by their use of underscores. They allow us to use Python specific functions on objects created through our class.
 ~~~
 ___________________________________________________
-## And what this does, if there's ever any function that asks for the string representation of your book class,
-## then it's going to return whatever this method returns, which is why it's a special method.
-
 class Book():
     def __init__(self, title, author, pages):
         self.title = title
