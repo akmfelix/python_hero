@@ -12,8 +12,12 @@ User defined objects are created using the class keyword. The class is a bluepri
 
 ~~~
 ___________________________________________________
-class Sample():
+# Create a new object type called Sample
+class Sample:
     pass
+# Instance of Sample
+x = Sample()
+print(type(x))
 
 # instance of a Sample class
 my_sample = Sample()
