@@ -12,7 +12,7 @@ print('yellow submarine')
 #yellow submarine
 ~~~
 
-## Modules and Packages
+## Modules
 * Modules in Python are simply Python files with the .py extension, which implement a set of functions.
 * To import a module, we use the import command.
 * The first time a module is loaded into a running Python script, it is initialized by EXECUTING THE CODE in the module once.
@@ -47,6 +47,7 @@ ceil(...)
 ### Writing modules
 * Writing Python modules is very simple. To create a module of your own, simply create a new .py file with the module name, and then import it using the Python file name (without the .py extension) using the import command.
 
+## Packages
 ### Writing packages
 * Packages are name-spaces which contain multiple packages and modules themselves. They are simply directories, but with a twist.
 * Each package in Python is a directory which MUST contain a special file called _init_.py. This file can be empty, and it indicates that the directory it contains is a Python package, so it can be imported the same way a module can be imported.
