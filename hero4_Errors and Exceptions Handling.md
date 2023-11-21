@@ -99,3 +99,30 @@ while True:
   except ValueError:
     print('Please enter an integer between 1 and 100.')
 ~~~
+
+# pylit
+Style and Error checking
+* pip install pylit
+~~~
+___________________________________________________
+'''
+I am commenting
+'''
+
+def myfunc():
+    '''
+    A simple function
+    '''
+    first = 1
+    second = 2
+    print(first)
+    print(second)
+myfunc()
+
+### Open the PyCharm settings window with menu File → Settings, then navigate to menu Tools → External Tools in the sidebar. (Or search "external tools")
+### Set up an external tool by clicking on the + sign and filling in the fields accordingly. In Program use the path you got when running which pylint. For the other values, you can use the same from the image.
+### Run pylint from menu Tools → External Tools → pylint:
+## in Pycharm
+## Tools -> pylit
+# Your code has been rated at 10.00/10 (previous run: 8.33/10, +1.67)
+~~~
