@@ -44,11 +44,36 @@ else: # else if there is no error
     print('Add went well')
 # 20
 # Add went well
+~~~
+
+* Example 2 for raising specific errors
+~~~
+___________________________________________________
+try:
+    f = open('testfile.txt', 'w')
+    f.write('Write a test line')
+except TypeError:
+    print('There was a Type Error')
+except OSError:
+    print('There was a OS Error')
+finally:
+    print('I always run')
+# I always run
+## testfile was created
 
 ___________________________________________________
-~~~
+try:
+    f = open('testfile.txt', 'r')
+    f.write('Write a test line')
+except TypeError:
+    print('There was a Type Error')
+except OSError:
+    print('There was a OS Error')
+finally:
+    print('I always run')
+# There was a OS Error
+# I always run
 
-* Example 2
-~~~
+___________________________________________________
 
 ~~~
