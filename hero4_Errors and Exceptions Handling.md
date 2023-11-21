@@ -139,8 +139,102 @@ A far better way to test your code is to write tests that send sample data to yo
 
 ## pylist
 pylint tests for style as well as some very basic program logic.\
-\
 First you should install module.
 ~~~
 pip install pylist
+~~~
+
+~~~
+___________________________________________________
+%%writefile simple1.py
+a = 1
+b = 2
+print(a)
+print(B)
+
+pylist simple1.py
+************* Module simple1
+C:  4, 0: Final newline missing (missing-final-newline)
+C:  1, 0: Missing module docstring (missing-docstring)
+C:  1, 0: Invalid constant name "a" (invalid-name)
+C:  2, 0: Invalid constant name "b" (invalid-name)
+E:  4, 6: Undefined variable 'B' (undefined-variable)
+~~~
+Pylint first lists some styling issues - it would like to see an extra newline at the end, modules and function definitions should have descriptive docstrings, and single characters are a poor choice for variable names.\
+\
+More importantly, however, pylint identified an error in the program - a variable called before assignment. This needs fixing.
+
+## unittest
+unittest lets you write your own test programs. The goal is to send a specific set of data to your program, and analyze the returned results against an expected result.\
+\
+Let's generate a simple script that capitalizes words in a given string. We'll call it cap.py.
+~~~
+def cap_text(text):
+    return text.capitalize()
+~~~
+When writing test functions, it's best to go from simple to complex, as each function will be run in order. Here we'll test simple, one-word strings, followed by a test of multiple word strings.
+~~~
+___________________________________________________
+import unittest
+import cap
+
+class TestCap(unittest.TestCase):
+    def test_one_word(self):
+        text = 'python'
+        result = cap.cap_text(text)
+        self.assertEqual(result,'Python')
+
+    def test_multiple_words(self):
+        text = 'monty python'
+        result = cap.cap_text(text)
+        self.assertEqual(result, 'Monty Python')
+
+if __name__ == '__maint__':
+    unittest.main()
+F.
+======================================================================
+FAIL: test_multiple_words (__main__.TestCap)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "test_cap.py", line 14, in test_multiple_words
+    self.assertEqual(result, 'Monty Python')
+AssertionError: 'Monty python' != 'Monty Python'
+- Monty python
+?       ^
++ Monty Python
+?       ^
+~~~
+* Example
+~~~
+___________________________________________________
+import string
+def cap_text(text):
+    '''
+    #return text.capitalize()
+    return string.capwords(text, sep=" ")
+
+##
+
+import unittest
+import cap
+
+class TestCap(unittest.TestCase):
+    def test_one_word(self):
+        text = 'python'
+        result = cap.cap_text(text)
+        self.assertEqual(result,'Python')
+
+    def test_multiple_words(self):
+        text = 'monty python'
+        result = cap.cap_text(text)
+        self.assertEqual(result, 'Monty Python')
+
+    def test_with_apostrophies(self):
+        text = "monty python's flying circus"
+        result = cap.cap_text(text)
+        self.assertEqual(result, "Monty Python's Flying Circus")
+
+Ran 1 test in 0.001s
+
+OK
 ~~~
