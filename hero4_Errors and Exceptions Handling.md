@@ -73,7 +73,29 @@ finally:
     print('I always run')
 # There was a OS Error
 # I always run
+~~~
+* Example 3 get a number from a user
+~~~
+___________________________________________________
+def ask_for_int():
+    while True:
+        try:
+            result = int(input('Provide a number:   '))
+            break
+        except:
+            print('That is not a number')
+            continue
+        finally:
+            print('End of try/except/finally]')
 
 ___________________________________________________
-
+while True:
+  try:
+    num = int(input('Integer between 1 and 100: '))
+    print(num)
+    if num < 1 or num > 100:
+      raise ValueError
+    break
+  except ValueError:
+    print('Please enter an integer between 1 and 100.')
 ~~~
