@@ -518,7 +518,9 @@ acct1.withdraw(500)
 Funds Unavailable!
 ~~~
 
-
+# if __name__ == '__main__'
+### __init__.py for packages (directories)
+### myscript.py module
 
 
 
