@@ -105,6 +105,7 @@ Style and Error checking
 * pip install pylit
 ~~~
 ___________________________________________________
+# in PyCharm
 '''
 I am commenting
 '''
@@ -125,4 +126,20 @@ myfunc()
 ## in Pycharm
 ## Tools -> pylit
 # Your code has been rated at 10.00/10 (previous run: 8.33/10, +1.67)
+~~~
+
+# Unit testing
+There are dozens of good testing libraries out there. Most are third-party packages that require an install. These are simple tools that merely look at your code, and they'll tell you if there are style issues or simple problems like variable names being called before assignment.
+* pylit
+* pyflakes
+* pep8
+A far better way to test your code is to write tests that send sample data to your program, and compare what's returned to a desired outcome. Two such tools are available from the standard library:
+* unittest
+* doctest
+
+## pylist
+pylint tests for style as well as some very basic program logic.\
+First you should install module.
+~~~
+pip install pylist
 ~~~
