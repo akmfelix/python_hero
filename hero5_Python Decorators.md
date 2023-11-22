@@ -1,7 +1,6 @@
 # Decorators
 Remember that in Python everything is an object. That means functions are objects which can be assigned labels and passed into other functions.
 ~~~
-__________________________________
 def hello(name='Jose'):
     return 'Hello '+name
 hello()
@@ -28,7 +27,6 @@ greet()
 Great! So we've seen how we can treat functions as objects, now let's see how we can define functions inside of other functions.\
 Note how due to scope, the welcome() function is not defined outside of the hello() function.
 ~~~
-__________________________________
 def hello(name='Jose'):
     print('The hello() function has been executed')
     
@@ -56,7 +54,6 @@ Returning functions from within functions.
 * This is because when you put a pair of parentheses after it, the function gets executed; whereas if you don’t put parentheses after it, then it can be passed around and can be assigned to other variables without executing it.
 * When we write x = hello(), hello() gets executed and because the name is Jose by default, the function greet is returned. If we change the statement to x = hello(name = "Sam") then the welcome function will be returned. We can also do print(hello()()) which outputs This is inside the greet() function.
 ~~~
-__________________________________
 def hello(name='Almas'):
     def greet():
         return '\t This is inside greet() function'
@@ -73,3 +70,56 @@ print(x())
 #	   This is inside the greet() function
 ~~~
 
+## Functions as Arguments
+Note how we can pass the functions as objects and then use them within other functions.
+~~~
+def hello():
+    return 'Hi Jose!'
+
+def other(func):
+    print('Other code would go here')
+    print(func())
+other(hello)
+# Other code would go here
+# Hi Jose!
+~~~
+
+## Creating a Decorator
+In the previous example we actually manually created a Decorator. Here we will modify it to make its use case clear.
+~~~
+def new_decorator(func):
+    def wrap_func():
+        print("Code would be here, before executing the func")
+        func()
+        print("Code here will execute after the func()")
+    return wrap_func
+
+def func_needs_decorator():
+    print("This function is in need of a Decorator")
+~~~
+
+~~~
+func_needs_decorator()
+# This function is in need of a Decorator
+~~~
+
+~~~
+# Reassign func_needs_decorator
+func_needs_decorator = new_decorator(func_needs_decorator)
+func_needs_decorator()
+
+# Code would be here, before executing the func
+# This function is in need of a Decorator
+# Code here will execute after the func()
+~~~
+
+So what just happened here? A decorator simply wrapped the function and modified its behavior. Now let's understand how we can rewrite this code using the @ symbol, which is what Python uses for Decorators:
+~~~
+@new_decorator
+def func_needs_decorator():
+    print("This function is in need of a Decorator")
+func_needs_decorator()
+# Code would be here, before executing the func
+# This function is in need of a Decorator
+# Code here will execute after the func()
+~~~
