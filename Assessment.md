@@ -523,7 +523,7 @@ Funds Unavailable!
 ### myscript.py module
 
 # Errors and Exceptions Homework
-## Problem 1
+### Problem 1
 Handle the exception thrown by the code below by using try and except blocks.
 ~~~
 try:
@@ -533,7 +533,7 @@ except:
     print('Unsupported operation.')
 # Unsupported operation.
 ~~~
-## Problem 2
+### Problem 2
 Handle the exception thrown by the code below by using try and except blocks. Then use a finally block to print 'All Done.'
 ~~~
 x = 5
@@ -547,7 +547,7 @@ finally:
 # Can not divide to zero
 # All done
 ~~~
-## Problem 3
+### Problem 3
 Write a function that asks for an integer and prints the square of it. Use a while loop with a try, except, else block to account for incorrect inputs.
 ~~~
 def ask():
@@ -565,4 +565,31 @@ def ask():
 # Input an integer:   e
 # An error occurred! Please try again!
 # Input an integer:   1
+~~~
+
+# Generator
+### Problem 1
+Create a generator that generates the squares of numbers up to some number N.
+~~~
+def gensquares(N):
+    for i in range(N):
+        yield i**2
+for x in gensquares(10):
+    print(x)
+0
+1
+4
+9
+16
+25
+36
+49
+64
+81
+~~~
+
+### Problem 2
+Create a generator that yields "n" random numbers between a low and high number (that are inputs). Note: Use the random library. For example:
+~~~
+
 ~~~
