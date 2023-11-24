@@ -281,3 +281,22 @@ def game_on():
 
 game_on()
 ~~~
+
+# Count instances of unique items in a list
+~~~
+mylist = [1,1,1,1,1,1,2,2,2,2,2,23,3,3,3,3,3,3]
+## method 1
+d ={}
+for i in mylist:
+    if i in d:
+        d[i] += 1
+    else:
+        d[i] = 1
+
+## method 2
+d = {}
+for i in mylist:
+    d[i] = d.get(i, 0) + 1
+
+# {1: 6, 2: 5, 23: 1, 3: 6}
+~~~
