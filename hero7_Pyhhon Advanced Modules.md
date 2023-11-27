@@ -339,3 +339,62 @@ pdb.set_trace()
 result2 = y+x
 print(result2)
 ~~~
+
+# Regular Expressions
+Regular Expressions (sometimes called regex for short) allows a user to search for strings using almost any sort of rule they can come up. For example, finding all capital letters in a string, or finding a phone number in a document.
+### Searching for Basic Patterns
+~~~
+text = "The person's phone number is 408-555-1234. Call soon!"
+'phone' in text
+# True
+~~~
+But let's show the format for regular expressions, because later on we will be searching for patterns that won't have such a simple solution.\
+Now we've seen that re.search() will take the pattern, scan the text, and then returns a Match object. If no pattern is found, a None is returned
+~~~
+import re
+pattern = 'phone'
+re.search(pattern,text)
+# <_sre.SRE_Match object; span=(13, 18), match='phone'>
+pattern = "NOT IN TEXT"
+re.search(pattern,text)
+~~~
+
+#### span
+~~~
+pattern = 'phone'
+match = re.search(pattern,text)
+match
+# <_sre.SRE_Match object; span=(13, 18), match='phone'>
+match.span()
+## start and end position
+# (13, 18)
+match.start()
+match.end()
+~~~
+But what if the pattern occurs more than once?\
+Notice it only matches the first instance.
+~~~
+text = "my phone is a new phone"
+match = re.search("phone",text)
+match.span()
+~~~
+findall('match text', 'search text'). If we wanted a list of all matches, we can use .findall() method:
+~~~
+matches = re.findall("phone",text)
+matches
+# ['phone', 'phone']
+len(matches)
+# 2
+~~~
+finditer('match text', 'search text'). To get actual match objects, use the iterator:
+~~~
+for match in re.finditer("phone",text):
+    print(match.span())
+(3, 8)
+(18, 23)
+~~~
+If you wanted the actual text that matched, you can use the .group() method.
+~~~
+match.group()
+# 'phone'
+~~~
