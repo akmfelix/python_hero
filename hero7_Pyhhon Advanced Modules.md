@@ -398,3 +398,147 @@ If you wanted the actual text that matched, you can use the .group() method.
 match.group()
 # 'phone'
 ~~~
+## Patterns
+We could just use search method if we know the exact phone or email, but what if we don't know it? We may know the general format, and we can use that along with regular expressions to search the document for strings that match a particular pattern.
+### Identifiers for Characters in Patterns
+Characters such as a digit or a single string have different codes that represent them. You can use these to build up a pattern string. Notice how these make heavy use of the backwards slash \ . Because of this when defining a pattern string for regular expression we use the format.\
+placing the r in front of the string allows python to understand that the \ in the pattern string are not meant to be escape slashes.
+~~~
+r'mypattern'
+~~~
+
+~~~
+Character	Description	        Example Pattern Code	Exammple Match
+\d	        A digit	            file_\d\d	            file_25
+\w	        Alphanumeric	    \w-\w\w\w	            A-b_1
+\s	        White space	        a\sb\sc	                a b c
+\D	        A non digit	        \D\D\D	                ABC
+\W	        Non-alphanumeric	\W\W\W\W\W	            *-+=)
+\S	        Non-whitespace	    \S\S\S\S	            Yoyo
+~~~
+Example:\
+Notice the repetition of \d. That is a bit of an annoyance, especially if we are looking for very long strings of numbers. Let's explore the possible quantifiers.
+~~~
+text = "My telephone number is 408-555-1234"
+phone = re.search(r'\d\d\d-\d\d\d-\d\d\d\d',text)
+phone.group()
+# '408-555-1234'
+~~~
+
+### Quantifiers
+Now that we know the special character designations, we can use them along with quantifiers to define how many we expect.
+~~~
+Character	Description	                Example Pattern Code	Exammple Match
++	        Occurs one or more times	Version \w-\w+	        Version A-b1_1
+{3}	        Occurs exactly 3 times	    \D{3}	                abc
+{2,4}	    Occurs 2 to 4 times	        \d{2,4}	                123
+{3,}	    Occurs 3 or more	        \w{3,}	                anycharacters
+\*	        Occurs zero or more times	A\*B\*C*	            AAACC
+?	        Once or none	            plurals?	            plural
+~~~
+Let's rewrite our pattern using these quantifiers:
+~~~
+re.search(r'\d{3}-\d{3}-\d{4}',text)
+# <_sre.SRE_Match object; span=(23, 35), match='408-555-1234'>
+~~~
+
+### Groups
+What if we wanted to do two tasks, find phone numbers, but also be able to quickly extract their area code (the first three digits). We can use groups for any general task that involves grouping together regular expressions (so that we can later break them down).\
+Using the phone number example, we can separate groups of regular expressions using parenthesis:
+~~~
+phone_pattern = re.compile(r'(\d{3})-(\d{3})-(\d{4})')
+results = re.search(phone_pattern,text)
+## The entire result
+results.group()
+# '408-555-1234'
+~~~
+Can then also call by group position. remember groups were separated by parenthesis (). Something to note is that group ordering starts at 1. Passing in 0 returns everything
+~~~
+results.group(1)
+# 555
+results.group(3)
+# 1234
+# We only had three groups of parenthesis
+results.group(4)
+# IndexError: no such group
+~~~
+
+## Additional Regex Syntax or | operator
+Use the pipe operator to have an or statment.
+~~~
+re.search(r"man|woman","This man was here.")
+# <_sre.SRE_Match object; span=(5, 8), match='man'>
+re.search(r"man|woman","This woman was here.")
+# <_sre.SRE_Match object; span=(5, 10), match='woman'>
+~~~
+
+### The Wildcard Character
+Use a "wildcard" as a placement that will match any character placed there. You can use a simple period . for this.
+~~~
+re.findall(r".at","The cat in the hat sat here.")
+# ['cat', 'hat', 'sat']
+re.findall(r".at","The bat went splat")
+#  ['bat', 'lat']
+~~~
+Notice how we only matched the first 3 letters, that is because we need a . for each wildcard letter. Or use the quantifiers described above to set its own rules.
+~~~
+re.findall(r"...at","The bat went splat")
+# ['e bat', 'splat']
+~~~
+However this still leads the problem to grabbing more beforehand. Really we only want words that end with "at".
+~~~
+# One or more non-whitespace that ends with 'at'
+re.findall(r'\S+at',"The bat went splat")
+~~~
+### Starts with and Ends With
+We can use the ^ to signal starts with, and the $ to signal ends with:\
+Note that this is for the entire string, not individual words!
+~~~
+## Ends with a number
+re.findall(r'\d$','This ends with a number 2')
+# ['2']
+## Starts with a number
+re.findall(r'^\d','1 is the loneliest number.')
+# ['1']
+~~~
+
+### Exclusion
+To exclude characters, we can use the ^ symbol in conjunction with a set of brackets []. Anything inside the brackets is excluded.\
+To get the words back together, use a + sign
+~~~
+phrase = "there are 3 numbers 34 inside 5 this sentence."
+re.findall(r'[^\d]',phrase)
+re.findall(r'[^\d]+',phrase)
+# ['there are ', ' numbers ', ' inside ', ' this sentence.']
+~~~
+We can use this to remove punctuation from a sentence.
+~~~
+test_phrase = 'This is a string! But it has punctuation. How can we remove it?'
+re.findall('[^!.? ]+',test_phrase)
+clean = ' '.join(re.findall('[^!.? ]+',test_phrase))
+clean
+# 'This is a string But it has punctuation How can we remove it'
+~~~
+
+### Brackets for Grouping
+As we showed above we can use brackets to group together options, for example if we wanted to find hyphenated words:
+~~~
+text = 'Only find the hypen-words in this sentence. But you do not know how long-ish they are'
+re.findall(r'[\w]+-[\w]+',text)
+# ['hypen-words', 'long-ish']
+~~~
+
+### Parenthesis for Multiple Options
+If we have multiple options for matching, we can use parenthesis to list out these options. For Example:
+~~~
+# Find words that start with cat and end with one of these options: 'fish','nap', or 'claw'
+text = 'Hello, would you like some catfish?'
+texttwo = "Hello, would you like to take a catnap?"
+textthree = "Hello, have you seen this caterpillar?"
+re.search(r'cat(fish|nap|claw)',text)
+re.search(r'cat(fish|nap|claw)',texttwo)
+re.search(r'cat(fish|nap|claw)',textthree)
+# <_sre.SRE_Match object; span=(27, 34), match='catfish'>
+# <_sre.SRE_Match object; span=(32, 38), match='catnap'>
+# # None returned
+~~~
