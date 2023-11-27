@@ -243,3 +243,80 @@ d1-d2
 # datetime.timedelta(9131)
 ~~~
 
+# Math and Random - modules
+### Useful math functions
+~~~
+## rounding numbers
+import math
+help(math)
+value = 4.5
+math.floor(value)
+# 4
+math.ceil(value)
+# 5
+round(value)
+4
+~~~
+
+~~~
+## mathematical constants
+math.pi
+# 3.141592653589793
+math.e
+# 2.718281828459045
+math.tau
+# 6.283185307179586
+math.inf
+# inf
+math.nan
+# nan
+math.log(math.e)
+# 1
+~~~
+
+### random module
+Random Module allows us to create random numbers. We can even set a seed to produce the same random set every time.
+#### Understanding a seed
+Setting a seed allows us to start from a seeded psuedorandom number generator, which means the same random numbers will show up in a series. Note, you need the seed to be in the same cell if your using jupyter to guarantee the same results each time. Getting a same set of random numbers can be important in situations where you will be trying different variations of functions and want to compare their performance on random values, but want to do it fairly (so you need the same set of random numbers each time).
+~~~
+import random
+random.randint(0,100)
+# 55
+~~~
+
+~~~
+## The value 101 is completely arbitrary, you can pass in any number you want
+random.seed(101)
+random.randint(0,100)
+# 74
+~~~
+
+#### Random with Sequences
+~~~
+mylist = list(range(0,20))
+random.choice(mylist)
+# 12
+~~~
+
+#### Sample with Replacement
+Take a sample size, allowing picking elements more than once. Imagine a bag of numbered lottery balls, you reach in to grab a random lotto ball, then after marking down the number, you place it back in the bag, then continue picking another one.
+~~~
+random.choices(population=mylist,k=10)
+# [15, 14, 17, 8, 17, 2, 19, 17, 6, 1]
+~~~
+
+#### Sample without Replacement
+Once an item has been randomly picked, it can't be picked again. Imagine a bag of numbered lottery balls, you reach in to grab a random lotto ball, then after marking down the number, you leave it out of the bag, then continue picking another one.
+~~~
+random.sample(population=mylist,k=10)
+# [17, 19, 11, 14, 1, 3, 4, 10, 5, 15]
+~~~
+
+#### Shuffle a list
+Note: This effects the object in place!
+~~~
+## Don't assign this to anything!
+random.shuffle(mylist)
+mylist
+# [9, 11, 7, 12, 10, 16, 0, 2, 18, 13, 3, 5, 17, 1, 15, 6, 14, 19, 4, 8]
+~~~
