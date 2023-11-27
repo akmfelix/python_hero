@@ -242,3 +242,4 @@ d2 = datetime.date(1990, 3, 11)
 d1-d2
 # datetime.timedelta(9131)
 ~~~
+
