@@ -300,3 +300,46 @@ for i in mylist:
 
 # {1: 6, 2: 5, 23: 1, 3: 6}
 ~~~
+
+# Working with directories and texts
+~~~
+## unzipping the file
+import shutil
+shutil.unpack_archive('unzip_me_for_instructions.zip','','zip')
+
+## read the instructions file
+with open('extracted_content/Instructions.txt') as f:
+    content = f.read()
+    print(content)
+
+## Regular Expression to Find the Link
+import re
+pattern = r'\d{3}-\d{3}-\d{4}'
+test_string = "here is a random number 1231231234 , here is phone number formatted 123-123-1234"
+re.findall(pattern,test_string)
+
+## create a function for regex
+def search(file,pattern= r'\d{3}-\d{3}-\d{4}'):
+    f = open(file,'r')
+    text = f.read()
+    
+    if re.search(pattern,text):
+        return re.search(pattern,text)
+    else:
+        return ''
+
+## OS walk through the files
+import os
+results = []
+for folder , sub_folders , files in os.walk(os.getcwd()+"\\extracted_content"):
+    
+    for f in files:
+        full_path = folder+'\\'+f
+         
+        results.append(search(full_path))
+
+for r in results:
+    if r != '':
+        print(r.group())
+
+~~~
