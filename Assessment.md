@@ -629,3 +629,27 @@ print(fil_gen)
 next(fil_gen)
 # 323
 ~~~
+
+# Section 16. Working with Images
+In the folder "Working with Images" (same folder this notebook is located in) there are two images we will be working with:
+* word_matrix.png
+* mask.png
+The word_matrix is a .png image that contains a spreadsheet of words with a hidden message in it.\
+\
+Your task is to use the mask.png image to reveal the hidden message inside the word_matrix.png. Keep in mind, you may need to resize the mask.png in order for this to work.\
+~~~
+from PIL import Image
+words = Image.open('word_matrix.png')
+mask = Image.open("mask.png")
+mask.size
+# (505, 251)
+words.size
+# (1015, 559)
+mask = mask.resize((1015,559))
+# mask.size
+mask.putalpha(200)
+words.paste(mask,(0,0),mask)
+words
+# picture
+~~~
+
